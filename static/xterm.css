@@ -129,6 +129,7 @@
 
 .xterm {
     cursor: text;
+    color: lime;
 }
 
 .xterm.enable-mouse-events {
