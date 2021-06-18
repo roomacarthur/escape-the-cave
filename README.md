@@ -14,9 +14,17 @@
 
 
 
-### Intro
+## Intro
 
 A text based, turn based game that the user will operate in the command line. The aim of the game is to escape the cave without getting caught by your captures. This game is completely written in Python 
+
+## Design
+
+logic Flow chart
+
+Content
+
+
 
 ## Technologies
 
