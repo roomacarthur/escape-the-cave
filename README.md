@@ -6,6 +6,12 @@
 - [Live Site]()
 
 - [Repo]()
+# Table of Contents
+1. [Intro](#intro)
+2. [Technologies](#technologies)
+3. [Credits](#credits)
+4. [Deployment](#deployment)
+
 
 
 ### Intro
@@ -38,7 +44,8 @@ This application will be deployed via [Heroku](https://heroku.com)
 ### Creating App.
 
 1. Ensure all code is correct and ready to deployment. 
-2. Enter "pip3 freeze > requirements.txt" to import the required dependencies to the requirements.txt file.
+2. Enter the following code to import the required dependencies to the requirements.txt file:
+    > pip3 freeze > requirements.txt
     - Heroku will use this file to import the dependencies that are required.
 3. Log into or sign up to Heroku(it's free).
     - If signing up, you will need to wait and accept authentication email.
@@ -64,3 +71,30 @@ This application will be deployed via [Heroku](https://heroku.com)
     - Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so. 
 6. Ensure the correct branch is selected "master/Main", and select the deployment method that you desire. In this case I will be using Automatic Deployment.
 
+### Forking Repository
+
+If you wish to experiment with the code freely, you can achieve this by forking the repository. Forking a repository allows you to experiment without the original project being effected. To achieve this you need to:
+
+1. Navigate to the repository roomacarthur/escape-the-cave.
+2. In the top right of the page, below your profile you should see a "Fork" button. Simply click on this.
+3. A copy of the repository will then be added to your own Repositories Page.
+
+### Cloning Repository
+
+1. Open GitBash ad create a directory where you want to save the code.
+    
+    > $ mkdir "directory-name"
+2. Navigate into the new directory
+    
+    > $ cd "directory-name"
+3. Navigate to the repository on GitHub [HERE](github.com/roomacarthur/escape-the-cave)
+4. On the upper right hand side of the content, click on the button "Code"
+5. A dropdown box should appear, copy the SHH key.
+6. Open up your GitBash terminal from before. 
+7. Clone the repository with the following command.
+    
+    > $ git clone "SSH-KEY"
+
+The code will now be cloned into a local directory for you to access. You can now access the code in your IDE by entering the following code into your terminal:
+    
+    > $ code .
