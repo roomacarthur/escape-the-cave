@@ -1,6 +1,15 @@
 # python code goes here
 import time
+import sys
 
-print("Escape The Cave, Test for deployment.\n")
+def typing(text):
+    """
+    This is a modified print function, rather than the whole print statement appearing all at once, the text has a timing in-between characters. In turn this provides a typing like animation. 
+    """
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.08)
 
-input("type your name: ")
+
+typing("Typing animation test.")
