@@ -9,8 +9,9 @@
 # Table of Contents
 1. [Intro](#intro)
 2. [Technologies](#technologies)
-3. [Credits](#credits)
-4. [Deployment](#deployment)
+3. [Bugs & Fixes](#bugs--fixes)
+4. [Credits](#credits)
+5. [Deployment](#deployment)
 
 
 
@@ -39,6 +40,11 @@ Content
 - [Git]()
 - [VS-Code]()
 - [Heroku](https://heroku.com)
+
+## Bugs & Fixes
+
+1. The typing animation function works flawlessly in terminal but when pushing to heroku and running it through the terminal template provided the animation isn't showing. 
+
 
 ## Credits
 
