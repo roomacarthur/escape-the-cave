@@ -3,9 +3,10 @@
 
 <div style="text-align:center"><img src="assets/images/logo.png" alt="Escape the cave logo."></div>
 
-- [Live Site]()
+- [Live Site](https://escape-the-cave.herokuapp.com/)
 
-- [Repo]()
+- [Repo](https://github.com/roomacarthur/escape-the-cave)
+
 # Table of Contents
 1. [Intro](#intro)
 2. [Technologies](#technologies)
