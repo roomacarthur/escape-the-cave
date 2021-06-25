@@ -1,3 +1,9 @@
+# Escape The Cave
+# All Code by Ruairidh MacArthur
+# https://github.com/roomacarthur
+# https://www.linkedin.com/in/ruairidh-macarthur/
+
+
 # imports:
 from functions import typing
 
@@ -21,19 +27,21 @@ def start_game():
     Starts the game, retrieves username from player and welcomes them to the game. 
     """
     # ---WELCOME MESSAGE
-    # intro_msg()
+    intro_msg()
 
     # Loop the name input call to ensure that the user inputs a name. 
     while True:
         #set P_NAME to a global variable so it can be called in other situations.
         global P_NAME
         P_NAME = input("Please enter a username: \n")
+        print()
         if P_NAME == "":
             print("You need to enter a username to continue...\n")
             continue
         else:
             break
     typing(f"Welcome {P_NAME}, good luck!\n", 0.03)
+    print("................")
     option_one()
 
 def option_one():
@@ -42,6 +50,7 @@ def option_one():
     If input is incorrect the input will be called again.
     """
     typing("You exit the room through the large wooden door and you notice the cave goes in two different directions!\n",0.01)
+    print()
     while True:
         choice = input("Do you go left or right? (left/right): ")
         if choice == "left":
@@ -63,6 +72,7 @@ def option_two():
     """
 
     typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n",0.03)
+    print()
     print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
     typing("You feel around as you try to get back up and realise that you tripped over an axe!\n", 0.03)
     while True:
@@ -85,16 +95,53 @@ def option_two():
 
 def option_three():
     typing("You turn right and run as fast as you can!\n",0.03)
+    print()
     print("SCREEEEEEEEEECHH!!!!\n")
     typing("WOAHH! You find yourself in a massive cavern full of bats!!\n",0.03)
+    print()
     typing("The large cavern has 4 exits!\n",0.03)
+    print()
     typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n",0.03)
-    print(f'"{P_NAME} IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
-    choice = int(input("Quickly, which path do you take? (1/2/3/4): "))
-
+    print()
+    print(f'"{P_NAME.upper()} IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
+    
+    while True:
+        choice = int(input("Quickly, which path do you take? (1/2/3/4): "))
+        try:
+            if choice == 1:
+                return option_five()
+            elif choice == 2:
+                return option_six()
+            elif choice == 3:
+                return option_seven()
+            elif choice == 4:
+                return option_twelve()
+            else:
+                break
+        except ValueError as e:
+            print(f"ValueError: {e}")
+            continue
         
 
 def option_four():
     typing("option 4",0.03)
+def option_five():
+    typing("option 5",0.03)
+def option_six():
+    typing("option 6",0.03)
+def option_seven():
+    typing("option 7",0.03)
+def option_eight():
+    typing("option 8",0.03)
+def option_nine():
+    typing("option 9",0.03)
+def option_ten():
+    typing("option 10",0.03)
+def option_eleven():
+    typing("option 11",0.03)
+def option_twelve():
+    typing("option 12",0.03)
+def option_thirteen():
+    typing("option 13",0.03)
 
 start_game()
