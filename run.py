@@ -1,4 +1,4 @@
-# python code goes here
+# imports:
 from functions import typing
 
 def intro_msg():
@@ -15,7 +15,7 @@ def intro_msg():
     typing("#              By. Ruairidh MacArthur #\n", 0.01)
     typing("#######################################\n", 0.01)
     print()
-# Start quiz function.
+
 def start_game():
     """
     Starts the game, retrieves username from player and welcomes them to the game. 
@@ -37,6 +37,10 @@ def start_game():
     option_one()
 
 def option_one():
+    """
+    OPTION 1 function - This is the start of the game, where the user makes their initial option on which direction to take. 
+    If input is incorrect the input will be called again.
+    """
     typing("You exit the room through the large wooden door and you notice the cave goes in two different directions!\n",0.01)
     while True:
         choice = input("Do you go left or right? (left/right): ")
@@ -80,7 +84,15 @@ def option_two():
             break
 
 def option_three():
-    typing("option 3",0.03)
+    typing("You turn right and run as fast as you can!\n",0.03)
+    print("SCREEEEEEEEEECHH!!!!\n")
+    typing("WOAHH! You find yourself in a massive cavern full of bats!!\n",0.03)
+    typing("The large cavern has 4 exits!\n",0.03)
+    typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n",0.03)
+    print(f'"{P_NAME} IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
+    choice = int(input("Quickly, which path do you take? (1/2/3/4): "))
+
+        
 
 def option_four():
     typing("option 4",0.03)
