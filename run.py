@@ -6,22 +6,23 @@ def intro_msg():
     Simple function to print the welcome graphics, this will be used more than once so to keep code readable it's going in it's own function.
     """
     print()
-    # typing("#####################################\n", 0.01)
-    # typing("#                                   #\n", 0.01)
-    # typing("#        ▄   ▄         ESCAPE       #\n", 0.01)
-    # typing("#    ▄█▄ █▀█▀█ ▄█▄       THE        #\n", 0.01)
-    # typing("#   ▀▀████▄█▄████▀▀        CAVE     #\n", 0.01)
-    # typing("#        ▀█▀█▀                      #\n", 0.01)
-    # typing("#                           By. Roo #\n", 0.01)
-    # typing("#####################################\n", 0.01)
-    # print()
+    typing("#######################################\n", 0.01)
+    typing("#                                     #\n", 0.01)
+    typing("#          ▄   ▄         ESCAPE       #\n", 0.01)
+    typing("#      ▄█▄ █▀█▀█ ▄█▄       THE        #\n", 0.01)
+    typing("#     ▀▀████▄█▄████▀▀        CAVE     #\n", 0.01)
+    typing("#          ▀█▀█▀                      #\n", 0.01)
+    typing("#              By. Ruairidh MacArthur #\n", 0.01)
+    typing("#######################################\n", 0.01)
+    print()
 # Start quiz function.
 def start_game():
     """
     Starts the game, retrieves username from player and welcomes them to the game. 
     """
     # ---WELCOME MESSAGE
-    intro_msg()
+    # intro_msg()
+
     # Loop the name input call to ensure that the user inputs a name. 
     while True:
         #set P_NAME to a global variable so it can be called in other situations.
