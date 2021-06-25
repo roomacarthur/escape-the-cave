@@ -52,6 +52,11 @@ def option_one():
             break
 
 def option_two():
+    """
+    OPTION 2 - function, progresses through the story Leading onto OPTION 4 no matter the choice. 
+    If the user decides to pick up the axe, they will have to name it and the variable for the axes name has been altered to a global variable so it can be called in later functions. 
+    """
+
     typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n",0.03)
     print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
     typing("You feel around as you try to get back up and realise that you tripped over an axe!\n", 0.03)
@@ -61,7 +66,7 @@ def option_two():
             typing("Ok then, If you want to keep it, it will need a name!\n",0.03)
             global AXE_NAME
             AXE_NAME = input("What do you want to call the axe?: ")
-            typing(f"{AXE_NAME}, Is a very wise choice!",0.03)
+            typing(f"{AXE_NAME}, Is a very wise choice!\n",0.03)
             option_four()
             break
         elif choice == "no":
