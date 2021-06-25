@@ -1,34 +1,20 @@
 # python code goes here
-import time
-import sys
-
-
-# Typing animation function.
-def typing(text, speed):
-    """
-    This is a modified print function, rather than the whole print statement appearing all at once, the text has a timing in-between characters. In turn this provides a typing like animation. 
-    text = The text you wish to enter.
-    speed = The typing animations speed.
-    """
-    for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(speed)
+from functions import typing
 
 def intro_msg():
     """
     Simple function to print the welcome graphics, this will be used more than once so to keep code readable it's going in it's own function.
     """
     print()
-    typing("#####################################\n", 0.01)
-    typing("#                                   #\n", 0.01)
-    typing("#        ▄   ▄         ESCAPE       #\n", 0.01)
-    typing("#    ▄█▄ █▀█▀█ ▄█▄       THE        #\n", 0.01)
-    typing("#   ▀▀████▄█▄████▀▀        CAVE     #\n", 0.01)
-    typing("#        ▀█▀█▀                      #\n", 0.01)
-    typing("#                           By. Roo #\n", 0.01)
-    typing("#####################################\n", 0.01)
-    print()
+    # typing("#####################################\n", 0.01)
+    # typing("#                                   #\n", 0.01)
+    # typing("#        ▄   ▄         ESCAPE       #\n", 0.01)
+    # typing("#    ▄█▄ █▀█▀█ ▄█▄       THE        #\n", 0.01)
+    # typing("#   ▀▀████▄█▄████▀▀        CAVE     #\n", 0.01)
+    # typing("#        ▀█▀█▀                      #\n", 0.01)
+    # typing("#                           By. Roo #\n", 0.01)
+    # typing("#####################################\n", 0.01)
+    # print()
 # Start quiz function.
 def start_game():
     """
@@ -36,26 +22,61 @@ def start_game():
     """
     # ---WELCOME MESSAGE
     intro_msg()
-    
-    p_name = input("Please enter a username: \n")
-
-    inv_slots = 2
-    typing(f"Welcome {p_name}, good luck and remember you only have {inv_slots} bag spaces!\n", 0.03)
+    # Loop the name input call to ensure that the user inputs a name. 
+    while True:
+        #set P_NAME to a global variable so it can be called in other situations.
+        global P_NAME
+        P_NAME = input("Please enter a username: \n")
+        if P_NAME == "":
+            print("You need to enter a username to continue...\n")
+            continue
+        else:
+            break
+    typing(f"Welcome {P_NAME}, good luck!\n", 0.03)
     option_one()
 
 def option_one():
-    """
-    First player option for the game. 
-    """
-    typing("You slowly open the door to find the cave leads in two different directions...\n", 0.03)
-    choice_one = input("Do you go left or right? (left/right): ")
-    if choice_one.lower() == "left":
-        typing("You slowly close the door behind you and head left down the dark dave...", 0.03)
-        typing("As you slowly navigate the cave you see a light in the distance.", 0.03)
-    elif choice_one.lower() == "right":
-        print()
-    else:
-        print()
+    typing("You exit the room through the large wooden door and you notice the cave goes in two different directions!\n",0.01)
+    while True:
+        choice = input("Do you go left or right? (left/right): ")
+        if choice == "left":
+            option_two()
+            break
+        elif choice == "right":
+            option_three()
+            break
+        elif (choice == "") or(choice != "left") or (choice != "right"):
+            print("please enter a correct option. (left or right)")
+            continue
+        else:
+            break
 
+def option_two():
+    typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n",0.03)
+    print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
+    typing("You feel around as you try to get back up and realise that you tripped over an axe!\n", 0.03)
+    while True:
+        choice = input("Do you keep the axe? (yes/no): ")
+        if choice == "yes":
+            typing("Ok then, If you want to keep it, it will need a name!\n",0.03)
+            global AXE_NAME
+            AXE_NAME = input("What do you want to call the axe?: ")
+            typing(f"{AXE_NAME}, Is a very wise choice!",0.03)
+            option_four()
+            break
+        elif choice == "no":
+            option_four()
+            break
+        elif choice == "" and choice != ("yes") or ("no"):
+            print("please enter a valid option! (yes or no)\n")
+            continue
+        else:
+            break
+
+def option_three():
+    typing("option 3",0.03)
+
+def option_four():
+    typing("option 4",0.03)
 
 start_game()
