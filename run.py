@@ -141,8 +141,8 @@ def option_ten():
 def option_eleven():
     typing(f"The goblins start to advance quickly, you pull{AXE_NAME} from your belt!\n",0.03)
     typing(f"You launch {AXE_NAME} at the massive candle chandelier above the goblins!\n",0.03)
-    typing(f"Luckily it hits the rope holding it up and the chandelier comes crashing down ontop of them!\n", 0.03)
-    game_win("This slows them down enough for you to make your great escape!")
+    typing(f"Luckily it hits the rope holding it up and the chandelier comes crashing down on top of them!\n", 0.03)
+    game_win("This slows them down enough for you to make your great escape!\n")
 # OPTION 12
 def option_twelve():
     typing("You make your way down the path which leads to a door.\n",0.03)
