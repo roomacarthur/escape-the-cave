@@ -13,7 +13,7 @@ def typing(text, speed):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(speed)
-        
+
 # two choice option function.
 def two_choice_option(prompt,opt1,opt2,path1,path2):
     """
@@ -38,3 +38,26 @@ def two_choice_option(prompt,opt1,opt2,path1,path2):
             
         except ValueError:
             print(f"ERROR: please enter a valid option! ({opt1} or {opt2})\n")
+
+# Game over function
+
+def game_over(msg):
+    typing(msg,0.04)
+    print("         GAME OVER         ")
+    print("███████▀▀▀░░░░░░░▀▀▀███████")
+    print("████▀░░░░░░░░░░░░░░░░░▀████")
+    print("███│░░░░░░░░░░░░░░░░░░░│███")
+    print("██▌│░░░░░░░░░░░░░░░░░░░│▐██")
+    print("██░└┐░░░░░░░░░░░░░░░░░┌┘░██")
+    print("██░░└┐░░░░░░░░░░░░░░░┌┘░░██")
+    print("██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██")
+    print("██▌░│██████▌░░░▐██████│░▐██")
+    print("███░│▐███▀▀░░▄░░▀▀███▌│░███")
+    print("██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██")
+    print("██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██")
+    print("████▄─┘██▌░░░░░░░▐██└─▄████")
+    print("█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████")
+    print("████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████")
+    print("█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████")
+    print("███████▄░░░░░░░░░░░▄███████")
+    print("██████████▄▄▄▄▄▄▄██████████")
