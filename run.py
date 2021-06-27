@@ -5,7 +5,7 @@
 
 
 # imports:
-from functions import typing, two_choice_option, game_over
+from functions import typing, two_choice_option, game_over, game_win
 
 def intro_msg():
     """
@@ -102,7 +102,8 @@ def option_four():
     prompt the user to input an option to progress further.  
     """
     typing("You pick the Axe up, you should give it a name..\n",0.02)
-    AXE_NAME = input("What do you want to call it?: ")
+    global AXE_NAME
+    AXE_NAME = input("What do you want to call it?: \n")
     typing(f"You slide {AXE_NAME} into your belt and continue moving down the cave.\n",0.03)
     typing("As you move deeper into the cave you start to hear some talking coming from somewhere\n",0.03)
     typing("You come across a door and notice that the chatter is coming from behind it!\n",0.03)
@@ -121,20 +122,35 @@ def option_five():
     typing("The water starts to get deeper but you notice a faint light at the far end of the cavern!\n",0.03)
     two_choice_option("Do you swim or turn around and run? (swim/run): \n","swim","run",option_thirteen,option_three)
 
+# OPTION 6
 def option_six():
     typing("option 6",0.03)
+# OPTION 7
 def option_seven():
     typing("option 7",0.03)
+# OPTION 8
 def option_eight():
     typing("option 8",0.03)
+# OPTION 9
 def option_nine():
     typing("option 9",0.03)
+# OPTION 10
 def option_ten():
     typing("option 10",0.03)
+# OPTION 11
 def option_eleven():
-    typing("option 11",0.03)
+    typing(f"The goblins start to advance quickly, you pull{AXE_NAME} from your belt!\n",0.03)
+    typing(f"You launch {AXE_NAME} at the massive candle chandelier above the goblins!\n",0.03)
+    typing(f"Luckily it hits the rope holding it up and the chandelier comes crashing down ontop of them!\n", 0.03)
+    game_win("This slows them down enough for you to make your great escape!")
+# OPTION 12
 def option_twelve():
-    typing("option 12",0.03)
+    typing("You make your way down the path which leads to a door.\n",0.03)
+    typing("You slowly reach out and touch the door...\n\n",0.03)
+    print("BANG!!!\n\n")
+    typing("You've triggered a mechanism, closing the door behind you!\n",0.03)
+    game_over("The door in front of you opens and you are greeted by a large goblin who clubs you over the head!\n")
+# OPTION 13
 def option_thirteen():
     typing("You start to swim and the light starts to get brighter!\n",0.03)
     typing("OMG! You can see the outside!\n",0.03)
@@ -146,7 +162,6 @@ def option_fourteen():
 
 start_game()
 
-# option_thirteen()
 
 
 

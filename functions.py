@@ -62,3 +62,9 @@ def game_over(msg):
     typing("█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████\n",0.01)
     typing("███████▄░░░░░░░░░░░▄███████\n",0.01)
     typing("██████████▄▄▄▄▄▄▄██████████\n",0.01)
+
+# Game win function
+def game_win(msg):
+    typing(msg,0.04)
+    print("\n\n")
+    print("congratulations you won!")
