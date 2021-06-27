@@ -5,7 +5,7 @@
 
 
 # imports:
-from functions import typing, two_choice_option
+from functions import typing, two_choice_option, game_over
 
 def intro_msg():
     """
@@ -50,9 +50,8 @@ def option_one():
     If input is incorrect the input will be called again.
     """
     typing("You exit the room through the large wooden door and you notice the cave goes in two different directions!\n",0.01)
-    print()
     # call two_choice function.
-    two_choice_option("Do you go left or right? (left/right): ", "left", "right", option_two, option_three)
+    two_choice_option("Do you go left or right? (left/right): \n", "left", "right", option_two, option_three)
 
 def option_two():
     """
@@ -61,28 +60,24 @@ def option_two():
     """
 
     typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n",0.03)
-    print()
     print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
     typing("You feel around as you try to get back up and realise that you tripped over an axe!\n", 0.03)
-    two_choice_option("Do you keep the axe? (yes/no): ","yes","no",option_four,option_four)
+    # call two_choice function
+    two_choice_option("Do you keep the axe? (yes/no): \n","yes","no",option_four,option_four1)
 
 def option_three():
     """
     OPTION 3 - the second starting path, option of 4 paths all named as integers, each path returns a new function and will loop if the value given for 'choice' is not an integer
     """
     typing("You turn right and run as fast as you can!\n",0.01)
-    print()
     print("SCREEEEEEEEEECHH!!!!\n")
     typing("WOAHH! You find yourself in a massive cavern full of bats!!\n",0.01)
-    print()
     typing("The large cavern has 4 exits!\n",0.01)
-    print()
     typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n",0.01)
-    print()
     print(f'" IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
     
     while True:
-        choice = int(input("Quickly, which path do you take? (1/2/3/4): "))
+        choice = int(input("Quickly, which path do you take? (1/2/3/4): \n"))
         try:
             if choice == 1:
                 return option_five()
@@ -99,13 +94,33 @@ def option_three():
             print("You must enter a 'number', try again.")
             continue
             
-        
-
 
 def option_four():
-    print("option 4")
+    """
+    Option 4 function - If user has picked up axe. 
+    progresses through the story and prompts the user to name their axe.
+    prompt the user to input an option to progress further.  
+    """
+    typing("You pick the Axe up, you should give it a name..\n",0.02)
+    AXE_NAME = input("What do you want to call it?: ")
+    typing(f"You slide {AXE_NAME} into your belt and continue moving down the cave.\n",0.03)
+    typing("As you move deeper into the cave you start to hear some talking coming from somewhere\n",0.03)
+    typing("You come across a door and notice that the chatter is coming from behind it!\n",0.03)
+    two_choice_option("Do you have a look behind the door? (yes/no):\n","yes","no",option_nine,option_ten)
+
+def option_four1():
+    """
+    Option 4.1 function - If user has not picked up axe.
+    """
+    print("")
+
 def option_five():
-    typing("option 5",0.03)
+    typing("You picked the largest opening of the four!\n",0.03)
+    typing("You start sprinting as fast as you can, knowing that the goblins aren't far behind!\n",0.03)
+    typing("All of a sudden you are ankle deep in water!\n",0.03)
+    typing("The water starts to get deeper but you notice a faint light at the far end of the cavern!\n",0.03)
+    two_choice_option("Do you swim or turn around and run? (swim/run): \n","swim","run",option_thirteen,option_three)
+
 def option_six():
     typing("option 6",0.03)
 def option_seven():
@@ -121,9 +136,17 @@ def option_eleven():
 def option_twelve():
     typing("option 12",0.03)
 def option_thirteen():
-    typing("option 13",0.03)
+    typing("You start to swim and the light starts to get brighter!\n",0.03)
+    typing("OMG! You can see the outside!\n",0.03)
+    typing("Just as you make it past halfway a crocodile grabs your ankle from under the water and pulls you down!\n",0.05)
+    print()
+    game_over("You make a valiant effort to fight the crocodile off, unfortunately you don't succeed\n")
+def option_fourteen():
+    typing("option 14",0.03)
 
 start_game()
+
+# option_thirteen()
 
 
 
