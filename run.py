@@ -5,7 +5,7 @@
 
 
 # imports:
-from functions import typing
+from functions import typing, two_choice_option
 
 def intro_msg():
     """
@@ -51,19 +51,8 @@ def option_one():
     """
     typing("You exit the room through the large wooden door and you notice the cave goes in two different directions!\n",0.01)
     print()
-    while True:
-        choice = input("Do you go left or right? (left/right): ")
-        if choice == "left":
-            option_two()
-            break
-        elif choice == "right":
-            option_three()
-            break
-        elif (choice == "") or(choice != "left") or (choice != "right"):
-            print("please enter a correct option. (left or right)")
-            continue
-        else:
-            break
+    # call two_choice function.
+    two_choice_option("Do you go left or right? (left/right): ", "left", "right", option_two, option_three)
 
 def option_two():
     """
@@ -75,35 +64,22 @@ def option_two():
     print()
     print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
     typing("You feel around as you try to get back up and realise that you tripped over an axe!\n", 0.03)
-    while True:
-        choice = input("Do you keep the axe? (yes/no): ")
-        if choice == "yes":
-            typing("Ok then, If you want to keep it, it will need a name!\n",0.03)
-            global AXE_NAME
-            AXE_NAME = input("What do you want to call the axe?: ")
-            typing(f"{AXE_NAME}, Is a very wise choice!\n",0.03)
-            option_four()
-            break
-        elif choice == "no":
-            option_four()
-            break
-        elif choice == "" and choice != ("yes") or ("no"):
-            print("please enter a valid option! (yes or no)\n")
-            continue
-        else:
-            break
+    two_choice_option("Do you keep the axe? (yes/no): ","yes","no",option_four,option_four)
 
 def option_three():
-    typing("You turn right and run as fast as you can!\n",0.03)
+    """
+    OPTION 3 - the second starting path, option of 4 paths all named as integers, each path returns a new function and will loop if the value given for 'choice' is not an integer
+    """
+    typing("You turn right and run as fast as you can!\n",0.01)
     print()
     print("SCREEEEEEEEEECHH!!!!\n")
-    typing("WOAHH! You find yourself in a massive cavern full of bats!!\n",0.03)
+    typing("WOAHH! You find yourself in a massive cavern full of bats!!\n",0.01)
     print()
-    typing("The large cavern has 4 exits!\n",0.03)
+    typing("The large cavern has 4 exits!\n",0.01)
     print()
-    typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n",0.03)
+    typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n",0.01)
     print()
-    print(f'"{P_NAME.upper()} IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
+    print(f'" IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
     
     while True:
         choice = int(input("Quickly, which path do you take? (1/2/3/4): "))
@@ -117,14 +93,17 @@ def option_three():
             elif choice == 4:
                 return option_twelve()
             else:
-                break
-        except ValueError as e:
-            print(f"ValueError: {e}")
+                print("Please enter a correct option (1/2/3/4).")
+                continue
+        except ValueError:
+            print("You must enter a 'number', try again.")
             continue
+            
         
 
+
 def option_four():
-    typing("option 4",0.03)
+    print("option 4")
 def option_five():
     typing("option 5",0.03)
 def option_six():
@@ -145,3 +124,6 @@ def option_thirteen():
     typing("option 13",0.03)
 
 start_game()
+
+
+
