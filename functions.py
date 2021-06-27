@@ -2,10 +2,14 @@
 import sys
 import time
 
+
 # Typing animation function.
 def typing(text, speed):
     """
-    This is a modified print function, rather than the whole print statement appearing all at once, the text has a timing in-between characters. In turn this provides a typing like animation. 
+    This is a modified print function,
+    rather than the whole print statement appearing all at once,
+    the text has a timing in-between characters. In turn this
+    provides a typing like animation.
     text = The text you wish to enter.
     speed = The typing animations speed.
     """
@@ -14,15 +18,18 @@ def typing(text, speed):
         sys.stdout.flush()
         time.sleep(speed)
 
+
 # two choice option function.
-def two_choice_option(prompt,opt1,opt2,path1,path2):
+def two_choice_option(prompt, opt1, opt2, path1, path2):
     """
-    Allows for the input(prompt) of an option(opt1/op2) with two outcomes(path1,path2).
-    When user enters a correct option the loops is passed and the given path is executed.
-    
+    Allows for the input(prompt) of an option(opt1/op2)
+    with two outcomes(path1,path2).
+    When user enters a correct option the loops is passed
+    and the given path is executed.
     """
 
-    # Consider if the try/except is even needed here as the else statement works fine. 
+    # Consider if the try/except is even needed here
+    # as the else statement works fine.
     while True:
         try:
             choice = input(prompt)
@@ -35,36 +42,36 @@ def two_choice_option(prompt,opt1,opt2,path1,path2):
             else:
                 print(f"Please enter a valid option! ({opt1} or {opt2})\n")
                 continue
-            
         except ValueError:
             print(f"ERROR: please enter a valid option! ({opt1} or {opt2})\n")
 
-# Game over function
 
+# Game over function
 def game_over(msg):
-    typing(msg,0.04)
+    typing(msg, 0.04)
     print()
-    typing("         GAME OVER         \n",0.01)
-    typing("███████▀▀▀░░░░░░░▀▀▀███████\n",0.01)
-    typing("████▀░░░░░░░░░░░░░░░░░▀████\n",0.01)
-    typing("███│░░░░░░░░░░░░░░░░░░░│███\n",0.01)
-    typing("██▌│░░░░░░░░░░░░░░░░░░░│▐██\n",0.01)
-    typing("██░└┐░░░░░░░░░░░░░░░░░┌┘░██\n",0.01)
-    typing("██░░└┐░░░░░░░░░░░░░░░┌┘░░██\n",0.01)
-    typing("██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██\n",0.01)
-    typing("██▌░│██████▌░░░▐██████│░▐██\n",0.01)
-    typing("███░│▐███▀▀░░▄░░▀▀███▌│░███\n",0.01)
-    typing("██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██\n",0.01)
-    typing("██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██\n",0.01)
-    typing("████▄─┘██▌░░░░░░░▐██└─▄████\n",0.01)
-    typing("█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████\n",0.01)
-    typing("████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████\n",0.01)
-    typing("█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████\n",0.01)
-    typing("███████▄░░░░░░░░░░░▄███████\n",0.01)
-    typing("██████████▄▄▄▄▄▄▄██████████\n",0.01)
+    typing("         GAME OVER         \n", 0.01)
+    typing("███████▀▀▀░░░░░░░▀▀▀███████\n", 0.01)
+    typing("████▀░░░░░░░░░░░░░░░░░▀████\n", 0.01)
+    typing("███│░░░░░░░░░░░░░░░░░░░│███\n", 0.01)
+    typing("██▌│░░░░░░░░░░░░░░░░░░░│▐██\n", 0.01)
+    typing("██░└┐░░░░░░░░░░░░░░░░░┌┘░██\n", 0.01)
+    typing("██░░└┐░░░░░░░░░░░░░░░┌┘░░██\n", 0.01)
+    typing("██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██\n", 0.01)
+    typing("██▌░│██████▌░░░▐██████│░▐██\n", 0.01)
+    typing("███░│▐███▀▀░░▄░░▀▀███▌│░███\n", 0.01)
+    typing("██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██\n", 0.01)
+    typing("██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██\n", 0.01)
+    typing("████▄─┘██▌░░░░░░░▐██└─▄████\n", 0.01)
+    typing("█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████\n", 0.01)
+    typing("████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████\n", 0.01)
+    typing("█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████\n", 0.01)
+    typing("███████▄░░░░░░░░░░░▄███████\n", 0.01)
+    typing("██████████▄▄▄▄▄▄▄██████████\n", 0.01)
+
 
 # Game win function
 def game_win(msg):
-    typing(msg,0.04)
+    typing(msg, 0.04)
     print("\n\n")
     print("congratulations you won!")
