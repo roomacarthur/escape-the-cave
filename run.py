@@ -92,6 +92,9 @@ def option_three():
 
 
 def option_three_return():
+    """
+    This allows for the user to return back back and get the same options but a different text content. 
+    """
     print("You end up back in the mahoosive cavern.\n")
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
@@ -132,7 +135,15 @@ def option_five():
 
 # OPTION 6
 def option_six():
-    typing("option 6", 0.03)
+    typing("Oft, you picked the smallest for the four options.\n", 0.03)
+    typing("It's so small, you struggle to fit through the gap!\n", 0.03)
+    typing("You somehow manage to squeeze yourself through the gap.\n", 0.03)
+    typing("You find yourself in a new cavern filled with slimy reeds that hang from the ceiling.\n", 0.03)
+    typing("As you slowly navigate your way through the maze of reeds, there is a loud rumble!\n\n", 0.03)
+    print("The floor crumbels and gives way!\n\n")
+    typing("AAAGGGGHHHHHHHHH!!!!!!\n", 0.03)
+    typing("You splash into some water and as you surface\n", 0.03)
+    game_win("You realise you have escaped!\n")
 
 
 # OPTION 7
