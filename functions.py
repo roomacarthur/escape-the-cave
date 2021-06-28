@@ -50,7 +50,7 @@ def four_choice_option(opt1, opt2, opt3, opt4):
     if the input is valid, it will continue with the story.
     If the input is not an integer it will throw a ValueError
     and prompt for input again. If the input is an integer but is not
-    valid, it will ask for input again. 
+    valid, it will ask for input again.
     """
     while True:
         choice = input("Quickly, which path do you take? (1/2/3/4): \n")
@@ -73,6 +73,7 @@ def four_choice_option(opt1, opt2, opt3, opt4):
                 continue
         except ValueError:
             print("You must enter a 'number', try again.")
+
 
 # Game over function
 def game_over(msg, function):
@@ -98,6 +99,7 @@ def game_over(msg, function):
     typing("██████████▄▄▄▄▄▄▄██████████\n", 0.01)
     play_again(function)
 
+
 # Game win function
 def game_win(msg, function):
     typing(msg, 0.04)
@@ -114,11 +116,11 @@ def game_win(msg, function):
     print()
     play_again(function)
 
+
 def play_again(option):
     print("To play again click the 'RUN ESCAPE THE CAVE' button at the top\n")
-    choice  = input("Or simply type 'yes': ")
+    choice = input("Or simply type 'yes': ")
     if choice == "yes":
         option()
     else:
         print("Thanks for playing!")
-
