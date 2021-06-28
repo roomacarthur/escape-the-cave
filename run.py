@@ -191,6 +191,9 @@ def option_eight():
 
 # OPTION 9
 def option_nine():
+    """
+    OPTION 9 - 
+    """
     if has_axe == True:
         two_choice_option("Do you want to jam your axe in the door? (yes/no): \n", "yes", "no", option_nine_one, option_nine_two)
     else:    
@@ -199,6 +202,9 @@ def option_nine():
 
 # OPTION 9.1 
 def option_nine_one():
+    """
+    OPTION 9.1 - 
+    """
     typing("You jam your axe in the door locking it shut!\n", 0.03)
     typing("What ever is behind the door hears you and start trying to break out!\n", 0.03)
     typing("the door starts to crack open! YOU RUN!!!!\n\n", 0.03)
@@ -207,6 +213,9 @@ def option_nine_one():
 
 # OPTION 9.2
 def option_nine_two():
+    """
+    OPTION 9.2 - 
+    """
     typing("You quitely sneak past the door and start to tun again!\n\n", 0.03)
     print("BANG!\n\n")
     typing("The door swings open and tow goblins emerge!\n", 0.03)
@@ -216,7 +225,10 @@ def option_nine_two():
 
 # OPTION 10
 def option_ten():
-    typing("option 10", 0.03)
+    typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n", 0.03)
+    typing("The goblins advance really fast... You hold them off as much as you can!\n", 0.03)
+    game_over("You must have forgot you where on your own, a goblin sneaks behind you and clubs you over the head!\n")
+
 
 
 # OPTION 11
@@ -248,13 +260,8 @@ def option_thirteen():
     game_over("You make a valiant effort to fight the crocodile off, unfortunately you don't succeed\n")
 
 
-# OPTION 14
-def option_fourteen():
-    typing("option 14", 0.03)
-
 
 start_game()
-# option_two()
 
 
 
