@@ -44,8 +44,7 @@ def start_game():
             continue
         else:
             break
-    typing(f"Welcome {P_NAME}, good luck!\n", 0.03)
-    print("................")
+    typing(f"Welcome {P_NAME}, good luck!\n\n", 0.03)
     option_one()
 
 
@@ -69,9 +68,9 @@ def option_two():
     it and the variable for the axes name has been altered to a
     global variable so it can be called in later functions.
     """
-    typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n", 0.03)
+    typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n\n", 0.03)
     print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
-    typing("You feel around as you try to get back up and realise that you tripped over an axe!\n", 0.03)
+    typing("You feel around as you try to get back up and realise that you tripped over an axe!\n\n", 0.03)
     # call two_choice function
     two_choice_option("Do you keep the axe? (yes/no): \n", "yes", "no", option_four, option_four_one)
 
@@ -110,7 +109,7 @@ def option_four():
     typing("You pick the Axe up, you should give it a name..\n", 0.02)
     global AXE_NAME
     AXE_NAME = input("What do you want to call it?: \n")
-    typing(f"You slide {AXE_NAME} into your belt and continue moving down the cave.\n", 0.03)
+    typing(f"You slide {AXE_NAME} into your belt and continue moving down the cave.\n\n", 0.03)
     typing("As you move deeper into the cave you start to hear some talking coming from somewhere\n", 0.03)
     typing("You come across a door and notice that the chatter is coming from behind it!\n", 0.03)
     two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
@@ -171,7 +170,7 @@ def option_seven_one():
 def option_eight():
     typing("you slowly ease the door open.\n", 0.03)
     typing("All of a sudden a gust of wind grabs the door and slams it open!\n\n", 0.03)
-    print("BANG!!\n\n")
+    print("BANG!!\n")
     typing("The goblins in the room see you and advance with their weapons drawn!\n", 0.03)
     if has_axe:
         two_choice_option("Do you fight or run? (fight/run): \n", "fight", "run", option_ten, option_eleven)
@@ -214,7 +213,7 @@ def option_nine_two():
 
 
 def option_ten():
-    typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n", 0.03)
+    typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n\n", 0.03)
     typing("The goblins advance really fast... You hold them off as much as you can!\n", 0.03)
     game_over("You must have forgotten you were on your own, a goblin sneaks behind you and clubs you over the head!\n", start_game)
 
