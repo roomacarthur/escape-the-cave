@@ -18,14 +18,13 @@
 
 ## Intro
 
-A text based, turn based game that the user will operate in the command line. The aim of the game is to escape the cave without getting caught by your captures. This game is completely written in Python 
+A text based, turn based game that the user will operate in the command line. The aim of the game is to escape the cave without getting caught by your captures. This game is completely written in Python.
 
 ## Design
 
 [Code Logic Flow Chart](https://lucid.app/lucidchart/invitations/accept/inv_45e4f3f7-722a-4413-a2d3-3a04dfd3cb2b)
 
 [Game Story/Content](https://docs.google.com/document/d/1gkMlBvm8pnAvG1E_excuL2s7OM48bxCQQx1XOgrXz50/edit?usp=sharing)
-
 
 
 ## Technologies
@@ -37,15 +36,26 @@ A text based, turn based game that the user will operate in the command line. Th
 ### Other Technologies and Libraries 
 
 - [time](https://docs.python.org/3/library/time.html)
-- [GitHub]()
-- [Git]()
-- [VS-Code]()
+- [GitHub](https://github.com/)
+- [Git](https://gitforwindows.org/)
+- [VS-Code](https://code.visualstudio.com/)
 - [Heroku](https://heroku.com)
+
+### Python Modules
+
+- [Time](https://docs.python.org/3/library/time.html)
+- [sys](https://docs.python.org/3/library/sys.html)
 
 ## Bugs & Fixes
 
-1. The typing animation function works flawlessly in terminal but when pushing to heroku and running it through the terminal template provided the animation isn't showing. 
+1. The typing animation function works flawlessly in terminal but when pushing to Heroku and running it through the terminal template provided the animation isn't showing. 
+    - 
 
+## Testing
+
+For testing print statements where used heavily during the coding of the application. 
+Once finished I manually tested the application, navigating all paths to see if they gave the expected result.
+All manual testing results can be found [HERE](https://docs.google.com/spreadsheets/d/1a76gGDzSrekAAO0boTX2rMBjeMiLd7eRQbkZOI7SfSQ/edit?usp=sharing)
 
 ## Credits
 
