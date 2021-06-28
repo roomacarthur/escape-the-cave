@@ -18,7 +18,7 @@
 
 ## Intro
 
-A text based, turn based game that the user will operate in the command line. The aim of the game is to escape the cave without getting caught by your captures. This game is completely written in Python.
+A text-based, turn-based game that the user will operate in the command line. The aim of the game is to escape the cave without getting caught by your captures. This game is completely written in Python.
 
 ## Design
 
@@ -48,12 +48,12 @@ A text based, turn based game that the user will operate in the command line. Th
 
 ## Bugs & Fixes
 
-1. The typing animation function works flawlessly in terminal but when pushing to Heroku and running it through the terminal template provided the animation isn't showing. 
+1. The typing animation function works flawlessly in the terminal but when pushing to Heroku and running it through the terminal template provided the animation isn't showing. 
     - 
 
 ## Testing
 
-For testing print statements where used heavily during the coding of the application. 
+For testing, print statements were used heavily during the coding of the application. 
 Once finished I manually tested the application, navigating all paths to see if they gave the expected result.
 All manual testing results can be found [HERE](https://docs.google.com/spreadsheets/d/1a76gGDzSrekAAO0boTX2rMBjeMiLd7eRQbkZOI7SfSQ/edit?usp=sharing)
 
@@ -68,14 +68,14 @@ This application will be deployed via [Heroku](https://heroku.com)
 
 ### Creating App.
 
-1. Ensure all code is correct and ready to deployment. 
+1. Ensure all code is correct and ready for deployment. 
 2. Enter the following code to import the required dependencies to the requirements.txt file:
     > pip3 freeze > requirements.txt
     - Heroku will use this file to import the dependencies that are required.
 3. Log into or sign up to Heroku(it's free).
-    - If signing up, you will need to wait and accept authentication email.
+    - If signing up, you will need to wait and accept an authentication email.
 4. Navigate to Dashboard. 
-5. Click "New" and select "create new app" from the drop down menu. This is found in the upper right portion of the window. 
+5. Click "New" and select "create new app" from the drop-down menu. This is found in the upper right portion of the window. 
 6. Provide a name for your application, this needs to be unique, and select your region.
 7. Click "Create App".
 
@@ -94,11 +94,11 @@ This application will be deployed via [Heroku](https://heroku.com)
 5. For Deployment there are two options, Automatic Deployments or Manual.
     - Automatic Deployment: This will prompt Heroku to re-build your app each time you push your code to GitHub.
     - Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so. 
-6. Ensure the correct branch is selected "master/Main", and select the deployment method that you desire. In this case I will be using Automatic Deployment.
+6. Ensure the correct branch is selected "master/Main", and select the deployment method that you desire. In this case, I will be using Automatic Deployment.
 
 ### Forking Repository
 
-If you wish to experiment with the code freely, you can achieve this by forking the repository. Forking a repository allows you to experiment without the original project being effected. To achieve this you need to:
+If you wish to experiment with the code freely, you can achieve this by forking the repository. Forking a repository allows you to experiment without the original project being affected. To achieve this you need to:
 
 1. Navigate to the repository roomacarthur/escape-the-cave.
 2. In the top right of the page, below your profile you should see a "Fork" button. Simply click on this.
@@ -123,3 +123,4 @@ If you wish to experiment with the code freely, you can achieve this by forking 
 The code will now be cloned into a local directory for you to access. You can now access the code in your IDE by entering the following code into your terminal:
     
     > $ code .
+
