@@ -7,6 +7,7 @@
 # imports:
 from functions import typing, two_choice_option, game_over, game_win, four_choice_option
 
+
 def intro_msg():
     """
     Simple function to print the welcome graphics, this will be
@@ -32,7 +33,7 @@ def start_game():
     # ---WELCOME MESSAGE
     intro_msg()
 
-    # Loop the name input call to ensure that the user inputs a name.
+    # Loop to ensure the user inputs a name.
     while True:
         # set P_NAME to a global variable.
         global P_NAME
@@ -48,7 +49,6 @@ def start_game():
     option_one()
 
 
-#OPTION 1
 def option_one():
     """
     OPTION 1 function - This is the start of the game,
@@ -61,7 +61,6 @@ def option_one():
     two_choice_option("Do you go left or right? (left/right): \n", "left", "right", option_two, option_three)
 
 
-# OPTION 2
 def option_two():
     """
     OPTION 2 - function, progresses through the story Leading onto
@@ -77,7 +76,6 @@ def option_two():
     two_choice_option("Do you keep the axe? (yes/no): \n", "yes", "no", option_four, option_four_one)
 
 
-# OPTION 3
 def option_three():
     """
     OPTION 3 - the second starting path,
@@ -93,16 +91,14 @@ def option_three():
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 
-# OPTION 3-RETURN
 def option_three_return():
     """
-    This allows for the user to return back and get the same options but different text content. 
+    This allows for the user to return back and get the same options but different text content.
     """
     print("You end up back in the mahoosive cavern.\n")
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 
-# OPTION 4
 def option_four():
     """
     Option 4 function - If the user has picked up the axe.
@@ -120,7 +116,6 @@ def option_four():
     two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
 
 
-# OPTION 4.1
 def option_four_one():
     """
     Option 4.1 function - If the user has not picked up the axe.
@@ -133,7 +128,6 @@ def option_four_one():
     two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
 
 
-# OPTION 5
 def option_five():
     typing("You picked the largest opening of the four!\n", 0.03)
     typing("You start sprinting as fast as you can, knowing that the goblins aren't far behind!\n", 0.03)
@@ -142,10 +136,9 @@ def option_five():
     two_choice_option("Do you swim or turn around and run? (swim/run): \n", "swim", "run", option_thirteen, option_three_return)
 
 
-# OPTION 6
 def option_six():
     """
-    Option 6 - 
+    Option 6 -
     """
     typing("Oft, you picked the smallest for the four options.\n", 0.03)
     typing("It's so small, you struggle to fit through the gap!\n", 0.03)
@@ -158,10 +151,9 @@ def option_six():
     game_win("You realise you have escaped!\n", start_game)
 
 
-# OPTION 7
 def option_seven():
     """
-    OPTION 7 - 
+    OPTION 7 -
     """
     typing("You run straight ahead having to stop suddenly for a massive pit!\n", 0.03)
     typing("You notice some reeds hanging down from above the pit!\n", 0.03)
@@ -169,20 +161,19 @@ def option_seven():
     two_choice_option("Do you risk swinging across? (swing/run)", "swing", "run", option_seven_one, option_three_return)
 
 
-# OPTION 7.1
 def option_seven_one():
     typing("You take a firm grip on one of the reeds...\n", 0.03)
     typing("You pull it back, run and jump!\n", 0.03)
     typing("You successfully land on the other side... somehow...\n\n", 0.03)
     game_win("You continue down the cave and make it outside!\n", start_game)
 
-# OPTION 8
+
 def option_eight():
     typing("you slowly ease the door open.\n", 0.03)
     typing("All of a sudden a gust of wind grabs the door and slams it open!\n\n", 0.03)
     print("BANG!!\n\n")
     typing("The goblins in the room see you and advance with their weapons drawn!\n", 0.03)
-    if has_axe == True:
+    if has_axe:
         two_choice_option("Do you fight or run? (fight/run): \n", "fight", "run", option_ten, option_eleven)
     else:
         typing("You turn around and run as fast as you can!\n", 0.03)
@@ -190,21 +181,19 @@ def option_eight():
         game_over("A large rock cracks you across the back of the head....\n", start_game)
 
 
-# OPTION 9
 def option_nine():
     """
-    OPTION 9 - 
+    OPTION 9 -
     """
-    if has_axe == True:
+    if has_axe:
         two_choice_option("Do you want to jam your axe in the door? (yes/no): \n", "yes", "no", option_nine_one, option_nine_two)
-    else:    
+    else:
         game_over("A goblin jumps out from a crack in the walla nd slaps you silly!", start_game)
 
 
-# OPTION 9.1 
 def option_nine_one():
     """
-    OPTION 9.1 - 
+    OPTION 9.1 -
     """
     typing("You jam your axe in the door locking it shut!\n", 0.03)
     typing("Whatever is behind the door hears you and start trying to break out!\n", 0.03)
@@ -212,10 +201,10 @@ def option_nine_one():
     typing("Ohhhh you run as fast as you can!\n", 0.03)
     game_win("You run so fast you make it out of the cave without any harm!\n", start_game)
 
-# OPTION 9.2
+
 def option_nine_two():
     """
-    OPTION 9.2 - 
+    OPTION 9.2 -
     """
     typing("You quietly sneak past the door and start to tun again!\n\n", 0.03)
     print("BANG!\n\n")
@@ -224,15 +213,12 @@ def option_nine_two():
     game_over("One arrow flies past your head and the other hits you in the back! You drop to the ground.\n", start_game)
 
 
-# OPTION 10
 def option_ten():
     typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n", 0.03)
     typing("The goblins advance really fast... You hold them off as much as you can!\n", 0.03)
     game_over("You must have forgotten you were on your own, a goblin sneaks behind you and clubs you over the head!\n", start_game)
 
 
-
-# OPTION 11
 def option_eleven():
     typing(f"The goblins start to advance quickly, you pull{AXE_NAME} from your belt!\n", 0.03)
     typing(f"You launch {AXE_NAME} at the massive candle chandelier above the goblins!\n", 0.03)
@@ -241,7 +227,6 @@ def option_eleven():
     game_win("This slows them down enough for you to make your great escape!\n", start_game)
 
 
-# OPTION 12
 def option_twelve():
     typing("You make your way down the path which leads to a door.\n", 0.03)
     typing("You slowly reach out and touch the door...\n\n", 0.03)
@@ -251,7 +236,6 @@ def option_twelve():
     game_over("The door in front of you opens and you are greeted by a large goblin who clubs you over the head!\n", start_game)
 
 
-# OPTION 13
 def option_thirteen():
     typing("You start to swim and the light starts to get brighter!\n", 0.03)
     typing("OMG! You can see the outside!\n", 0.03)
@@ -262,9 +246,3 @@ def option_thirteen():
 
 
 start_game()
-
-
-
-
-
-
