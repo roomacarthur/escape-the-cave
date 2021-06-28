@@ -46,6 +46,28 @@ def two_choice_option(prompt, opt1, opt2, path1, path2):
             print(f"ERROR: please enter a valid option! ({opt1} or {opt2})\n")
 
 
+def four_choice_option(opt1, opt2, opt3, opt4):
+    """
+    
+    """
+    while True:
+        choice = int(input("Quickly, which path do you take? (1/2/3/4): \n"))
+        try:
+            if choice == 1:
+                return opt1()
+            elif choice == 2:
+                return opt2()
+            elif choice == 3:
+                return opt3()
+            elif choice == 4:
+                return opt4()
+            else:
+                print("Please enter a correct option (1/2/3/4).")
+                continue
+        except ValueError:
+            print("You must enter a 'number', try again.")
+            continue
+
 # Game over function
 def game_over(msg):
     typing(msg, 0.04)
@@ -74,4 +96,14 @@ def game_over(msg):
 def game_win(msg):
     typing(msg, 0.04)
     print("\n\n")
-    print("congratulations you won!")
+    typing("#######################################\n", 0.01)
+    typing("#     CONGRATULATIONS YOU ESCAPED     #\n", 0.01)
+    typing("#                                     #\n", 0.01)
+    typing("#          ▄   ▄         ESCAPE       #\n", 0.01)
+    typing("#      ▄█▄ █▀█▀█ ▄█▄       THE        #\n", 0.01)
+    typing("#     ▀▀████▄█▄████▀▀        CAVE     #\n", 0.01)
+    typing("#          ▀█▀█▀                      #\n", 0.01)
+    typing("#              By. Ruairidh MacArthur #\n", 0.01)
+    typing("#######################################\n", 0.01)
+    print()
+    print("To play again click the 'RUN ESCAPE THE CAVE' button at the top")
