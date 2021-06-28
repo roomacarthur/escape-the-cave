@@ -3,7 +3,6 @@ import sys
 import time
 
 
-# Typing animation function.
 def typing(text, speed):
     """
     This is a modified print function,
@@ -19,7 +18,6 @@ def typing(text, speed):
         time.sleep(speed)
 
 
-# two choice option function.
 def two_choice_option(prompt, opt1, opt2, path1, path2):
     """
     Allows for the input(prompt) of an option(opt1/op2)
@@ -27,9 +25,6 @@ def two_choice_option(prompt, opt1, opt2, path1, path2):
     When a user enters a correct option the loop is passed
     and the given path is executed.
     """
-
-    # Consider if the try/except is even needed here
-    # as the else statement works fine.
     while True:
         choice = input(prompt)
         if choice == opt1:
@@ -75,8 +70,13 @@ def four_choice_option(opt1, opt2, opt3, opt4):
             print("You must enter a 'number', try again.")
 
 
-# Game over function
 def game_over(msg, function):
+    """
+    Function for when the user has unsuccessfully navigated
+    the game!
+    msg = to text to display to the user.
+    function = the start_game function to re call the game.
+    """
     typing(msg, 0.04)
     print()
     typing("         GAME OVER         \n", 0.01)
@@ -100,8 +100,13 @@ def game_over(msg, function):
     play_again(function)
 
 
-# Game win function
 def game_win(msg, function):
+    """
+    Function for when the user has successfully navigated
+    the game!
+    msg = to text to display to the user.
+    function = the start_game function to re call the game.
+    """
     typing(msg, 0.04)
     print("\n\n")
     typing("#######################################\n", 0.01)
@@ -118,8 +123,13 @@ def game_win(msg, function):
 
 
 def play_again(option):
+    """
+    Simple function to allow for the user to restart
+    the game from the terminal and/or tell them how they
+    can manually start it from the browser window.
+    """
     print("To play again click the 'RUN ESCAPE THE CAVE' button at the top\n")
-    choice = input("Or simply type 'yes': ")
+    choice = input("Or simply type 'yes': \n")
     if choice == "yes":
         option()
     else:
