@@ -5,7 +5,7 @@
 
 
 # imports:
-from functions import typing, two_choice_option, game_over, game_win
+from functions import typing, two_choice_option, game_over, game_win, four_choice_option
 
 def intro_msg():
     """
@@ -82,34 +82,18 @@ def option_three():
     option of 4 paths all named as integers, each path returns a new function
     and will loop if the value given for 'choice' is not an integer
     """
-    typing("You turn right and run as fast as you can!\n", 0.01)
-    print("SCREEEEEEEEEECHH!!!!\n")
+    typing("You turn right and run as fast as you can!\n\n", 0.01)
+    print("SCREEEEEEEEEECHH!!!!\n\n")
     typing("WOAHH! You find yourself in a massive cavern full of bats!!\n", 0.01)
     typing("The large cavern has 4 exits!\n", 0.01)
     typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n", 0.01)
     print(f'" IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
-
-    while True:
-        choice = int(input("Quickly, which path do you take? (1/2/3/4): \n"))
-        try:
-            if choice == 1:
-                return option_five()
-            elif choice == 2:
-                return option_six()
-            elif choice == 3:
-                return option_seven()
-            elif choice == 4:
-                return option_twelve()
-            else:
-                print("Please enter a correct option (1/2/3/4).")
-                continue
-        except ValueError:
-            print("You must enter a 'number', try again.")
-            continue
+    four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 
 def option_three_return():
-    print("You end up back in the mahoosive cavern.")
+    print("You end up back in the mahoosive cavern.\n")
+    four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 def option_four():
     """
@@ -142,7 +126,7 @@ def option_five():
     typing("You picked the largest opening of the four!\n", 0.03)
     typing("You start sprinting as fast as you can, knowing that the goblins aren't far behind!\n", 0.03)
     typing("All of a sudden you are ankle deep in water!\n", 0.03)
-    typing("The water starts to get deeper but you notice a faint light at the far end of the cavern!\n", 0.03)
+    typing("As the water starts to get deeper but you notice a faint light at the far end of the cavern!\n", 0.03)
     two_choice_option("Do you swim or turn around and run? (swim/run): \n", "swim", "run", option_thirteen, option_three_return)
 
 
@@ -158,10 +142,16 @@ def option_seven():
 
 # OPTION 8
 def option_eight():
+    typing("you slowly ease the door open.\n", 0.03)
+    typing("All of a sudden a gust of wind grabs the door and slams it open!\n\n", 0.03)
+    print("BANG!!\n\n")
+    typing("The goblins in the room see you and advance with their weapons drawn!\n", 0.03)
     if has_axe == True:
-        print("mans got an axe")
+        two_choice_option("Do you fight or run? (fight/run): \n", "fight", "run", option_ten, option_eleven)
     else:
-        print("Mandems got no axe")
+        typing("You turn around and run as fast as you can!\n", 0.03)
+        typing("As you make a break for it the goblins start launching things at you!\n", 0.03)
+        game_over("A large rock cracks you across the back of the head....\n")
 
 # OPTION 9
 def option_nine():
@@ -210,8 +200,8 @@ def option_fourteen():
     typing("option 14", 0.03)
 
 
-# start_game()
-option_two()
+start_game()
+# option_two()
 
 
 
