@@ -58,7 +58,8 @@ def option_one():
     typing("You exit the room through the large wooden door...\n", 0.01)
     typing("You notice the cave goes in two different directions!\n", 0.01)
     # call two_choice function.
-    two_choice_option("Do you go left or right? (left/right): \n", "left", "right", option_two, option_three)
+    two_choice_option("Do you go left or right? (left/right): \n", \
+        "left", "right", option_two, option_three)
 
 
 def option_two():
