@@ -21,8 +21,7 @@ def intro_msg():
     typing("#     ▀▀████▄█▄████▀▀        CAVE     #\n", 0.01)
     typing("#          ▀█▀█▀                      #\n", 0.01)
     typing("#              By. Ruairidh MacArthur #\n", 0.01)
-    typing("#######################################\n", 0.01)
-    print()
+    typing("#######################################\n\n", 0.01)
 
 
 def start_game():
@@ -54,7 +53,7 @@ def option_one():
     """
     OPTION 1 function - This is the start of the game,
     where the user makes their initial option on which
-    direction to take. If input is incorrect the input
+    direction to take. If the input is incorrect the input
     will be called again.
     """
     typing("You exit the room through the large wooden door and you notice the cave goes in two different directions!\n", 0.01)
@@ -97,7 +96,7 @@ def option_three():
 # OPTION 3-RETURN
 def option_three_return():
     """
-    This allows for the user to return back back and get the same options but a different text content. 
+    This allows for the user to return back and get the same options but different text content. 
     """
     print("You end up back in the mahoosive cavern.\n")
     four_choice_option(option_five, option_six, option_seven, option_twelve)
@@ -106,7 +105,7 @@ def option_three_return():
 # OPTION 4
 def option_four():
     """
-    Option 4 function - If user has picked up axe.
+    Option 4 function - If the user has picked up the axe.
     progresses through the story and prompts the user to name their axe.
     prompt the user to input an option to progress further.
     """
@@ -124,7 +123,7 @@ def option_four():
 # OPTION 4.1
 def option_four_one():
     """
-    Option 4.1 function - If user has not picked up axe.
+    Option 4.1 function - If the user has not picked up the axe.
     """
     global has_axe
     has_axe = False
@@ -208,9 +207,9 @@ def option_nine_one():
     OPTION 9.1 - 
     """
     typing("You jam your axe in the door locking it shut!\n", 0.03)
-    typing("What ever is behind the door hears you and start trying to break out!\n", 0.03)
+    typing("Whatever is behind the door hears you and start trying to break out!\n", 0.03)
     typing("the door starts to crack open! YOU RUN!!!!\n\n", 0.03)
-    typing("ohhhh you run as fast as you can!\n", 0.03)
+    typing("Ohhhh you run as fast as you can!\n", 0.03)
     game_win("You run so fast you make it out of the cave without any harm!\n", start_game)
 
 # OPTION 9.2
@@ -218,7 +217,7 @@ def option_nine_two():
     """
     OPTION 9.2 - 
     """
-    typing("You quitely sneak past the door and start to tun again!\n\n", 0.03)
+    typing("You quietly sneak past the door and start to tun again!\n\n", 0.03)
     print("BANG!\n\n")
     typing("The door swings open and tow goblins emerge!\n", 0.03)
     typing("Faster than you can turn around and run, the goblins fire two arrows!\n", 0.03)
@@ -229,7 +228,7 @@ def option_nine_two():
 def option_ten():
     typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n", 0.03)
     typing("The goblins advance really fast... You hold them off as much as you can!\n", 0.03)
-    game_over("You must have forgot you where on your own, a goblin sneaks behind you and clubs you over the head!\n", start_game)
+    game_over("You must have forgotten you were on your own, a goblin sneaks behind you and clubs you over the head!\n", start_game)
 
 
 
@@ -259,10 +258,11 @@ def option_thirteen():
     typing("Just as you make it past halfway a crocodile grabs your ankle from under the water and pulls you down!\n", 0.05)
     print()
     # Game Over message
-    game_over("You make a valiant effort to fight the crocodile off, unfortunately you don't succeed\n", start_game)
+    game_over("You make a valiant effort to fight the crocodile off, unfortunately, you don't succeed\n", start_game)
 
 
 start_game()
+
 
 
 

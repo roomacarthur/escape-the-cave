@@ -8,7 +8,7 @@ def typing(text, speed):
     """
     This is a modified print function,
     rather than the whole print statement appearing all at once,
-    the text has a timing in-between characters. In turn this
+    the text has a timing in-between characters. In turn, this
     provides a typing like animation.
     text = The text you wish to enter.
     speed = The typing animations speed.
@@ -24,7 +24,7 @@ def two_choice_option(prompt, opt1, opt2, path1, path2):
     """
     Allows for the input(prompt) of an option(opt1/op2)
     with two outcomes(path1,path2).
-    When user enters a correct option the loops is passed
+    When a user enters a correct option the loop is passed
     and the given path is executed.
     """
 
@@ -47,9 +47,9 @@ def two_choice_option(prompt, opt1, opt2, path1, path2):
 def four_choice_option(opt1, opt2, opt3, opt4):
     """
     Function to allow for a 4 point multiple choice option,
-    if input is valid, it will continue with story.
+    if the input is valid, it will continue with the story.
     If the input is not an integer it will throw a ValueError
-    and prompt for input again. If input is an integers but is not
+    and prompt for input again. If the input is an integer but is not
     valid, it will ask for input again. 
     """
     while True:
@@ -121,3 +121,4 @@ def play_again(option):
         option()
     else:
         print("Thanks for playing!")
+
