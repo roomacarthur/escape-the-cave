@@ -126,6 +126,8 @@ def option_four_one():
     """
     Option 4.1 function - If user has not picked up axe.
     """
+    global has_axe
+    has_axe = False
     typing("You leave the axe on the floor and move deeper into the cave system!\n", 0.03)
     typing("You can hear some chatter coming from further down the cave\n", 0.03)
     typing("You come across a door and notice that the chatter is coming from behind it!\n", 0.03)
@@ -154,7 +156,7 @@ def option_six():
     print("The floor crumbels and gives way!\n\n")
     typing("AAAGGGGHHHHHHHHH!!!!!!\n", 0.03)
     typing("You splash into some water and as you surface\n", 0.03)
-    game_win("You realise you have escaped!\n")
+    game_win("You realise you have escaped!\n", start_game)
 
 
 # OPTION 7
@@ -173,7 +175,7 @@ def option_seven_one():
     typing("You take a firm grip on one of the reeds...\n", 0.03)
     typing("You pull it back, run and jump!\n", 0.03)
     typing("You successfully land on the other side... somehow...\n\n", 0.03)
-    game_win("You continue down the cave and make it outside!\n")
+    game_win("You continue down the cave and make it outside!\n", start_game)
 
 # OPTION 8
 def option_eight():
@@ -186,7 +188,7 @@ def option_eight():
     else:
         typing("You turn around and run as fast as you can!\n", 0.03)
         typing("As you make a break for it the goblins start launching things at you!\n", 0.03)
-        game_over("A large rock cracks you across the back of the head....\n")
+        game_over("A large rock cracks you across the back of the head....\n", start_game)
 
 
 # OPTION 9
@@ -197,7 +199,7 @@ def option_nine():
     if has_axe == True:
         two_choice_option("Do you want to jam your axe in the door? (yes/no): \n", "yes", "no", option_nine_one, option_nine_two)
     else:    
-        option_nine_two()
+        game_over("A goblin jumps out from a crack in the walla nd slaps you silly!", start_game)
 
 
 # OPTION 9.1 
@@ -209,7 +211,7 @@ def option_nine_one():
     typing("What ever is behind the door hears you and start trying to break out!\n", 0.03)
     typing("the door starts to crack open! YOU RUN!!!!\n\n", 0.03)
     typing("ohhhh you run as fast as you can!\n", 0.03)
-    game_win("You run so fast you make it out of the cave without any harm!")
+    game_win("You run so fast you make it out of the cave without any harm!\n", start_game)
 
 # OPTION 9.2
 def option_nine_two():
@@ -220,14 +222,14 @@ def option_nine_two():
     print("BANG!\n\n")
     typing("The door swings open and tow goblins emerge!\n", 0.03)
     typing("Faster than you can turn around and run, the goblins fire two arrows!\n", 0.03)
-    game_over("One arrow flies past your head and the other hits you in the back! You drop to the ground.\n")
+    game_over("One arrow flies past your head and the other hits you in the back! You drop to the ground.\n", start_game)
 
 
 # OPTION 10
 def option_ten():
     typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n", 0.03)
     typing("The goblins advance really fast... You hold them off as much as you can!\n", 0.03)
-    game_over("You must have forgot you where on your own, a goblin sneaks behind you and clubs you over the head!\n")
+    game_over("You must have forgot you where on your own, a goblin sneaks behind you and clubs you over the head!\n", start_game)
 
 
 
@@ -237,7 +239,7 @@ def option_eleven():
     typing(f"You launch {AXE_NAME} at the massive candle chandelier above the goblins!\n", 0.03)
     typing(f"Luckily it hits the rope holding it up and the chandelier comes crashing down on top of them!\n", 0.03)
     # Game Win message
-    game_win("This slows them down enough for you to make your great escape!\n")
+    game_win("This slows them down enough for you to make your great escape!\n", start_game)
 
 
 # OPTION 12
@@ -247,7 +249,7 @@ def option_twelve():
     print("BANG!!!\n\n")
     typing("You've triggered a mechanism, closing the door behind you!\n", 0.03)
     # Game Over message
-    game_over("The door in front of you opens and you are greeted by a large goblin who clubs you over the head!\n")
+    game_over("The door in front of you opens and you are greeted by a large goblin who clubs you over the head!\n", start_game)
 
 
 # OPTION 13
@@ -257,11 +259,11 @@ def option_thirteen():
     typing("Just as you make it past halfway a crocodile grabs your ankle from under the water and pulls you down!\n", 0.05)
     print()
     # Game Over message
-    game_over("You make a valiant effort to fight the crocodile off, unfortunately you don't succeed\n")
-
+    game_over("You make a valiant effort to fight the crocodile off, unfortunately you don't succeed\n", start_game)
 
 
 start_game()
+
 
 
 
