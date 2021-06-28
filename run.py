@@ -135,6 +135,9 @@ def option_five():
 
 # OPTION 6
 def option_six():
+    """
+    Option 6 - 
+    """
     typing("Oft, you picked the smallest for the four options.\n", 0.03)
     typing("It's so small, you struggle to fit through the gap!\n", 0.03)
     typing("You somehow manage to squeeze yourself through the gap.\n", 0.03)
@@ -148,8 +151,19 @@ def option_six():
 
 # OPTION 7
 def option_seven():
-    typing("option 7", 0.03)
+    """
+    OPTION 7 - 
+    """
+    typing("You run straight ahead having to stop suddenly for a massive pit!\n", 0.03)
+    typing("You notice some reeds hanging down from above the pit!\n", 0.03)
+    typing("You can see some light coming from down the cave on the other side of the pit!\n", 0.03)
+    two_choice_option("Do you risk swinging across? (swing/run)", "swing", "run", option_seven_one, option_three_return)
 
+def option_seven_one():
+    typing("You take a firm grip on one of the reeds...\n", 0.03)
+    typing("You pull it back, run and jump!\n", 0.03)
+    typing("You successfully land on the other side... somehow...\n\n", 0.03)
+    game_win("You continue down the cave and make it outside!\n")
 
 # OPTION 8
 def option_eight():
