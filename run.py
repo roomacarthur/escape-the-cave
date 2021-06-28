@@ -49,6 +49,7 @@ def start_game():
     option_one()
 
 
+#OPTION 1
 def option_one():
     """
     OPTION 1 function - This is the start of the game,
@@ -61,6 +62,7 @@ def option_one():
     two_choice_option("Do you go left or right? (left/right): \n", "left", "right", option_two, option_three)
 
 
+# OPTION 2
 def option_two():
     """
     OPTION 2 - function, progresses through the story Leading onto
@@ -76,6 +78,7 @@ def option_two():
     two_choice_option("Do you keep the axe? (yes/no): \n", "yes", "no", option_four, option_four_one)
 
 
+# OPTION 3
 def option_three():
     """
     OPTION 3 - the second starting path,
@@ -91,6 +94,7 @@ def option_three():
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 
+# OPTION 3-RETURN
 def option_three_return():
     """
     This allows for the user to return back back and get the same options but a different text content. 
@@ -98,6 +102,8 @@ def option_three_return():
     print("You end up back in the mahoosive cavern.\n")
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
+
+# OPTION 4
 def option_four():
     """
     Option 4 function - If user has picked up axe.
@@ -115,6 +121,7 @@ def option_four():
     two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
 
 
+# OPTION 4.1
 def option_four_one():
     """
     Option 4.1 function - If user has not picked up axe.
@@ -125,6 +132,7 @@ def option_four_one():
     two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
 
 
+# OPTION 5
 def option_five():
     typing("You picked the largest opening of the four!\n", 0.03)
     typing("You start sprinting as fast as you can, knowing that the goblins aren't far behind!\n", 0.03)
@@ -159,6 +167,8 @@ def option_seven():
     typing("You can see some light coming from down the cave on the other side of the pit!\n", 0.03)
     two_choice_option("Do you risk swinging across? (swing/run)", "swing", "run", option_seven_one, option_three_return)
 
+
+# OPTION 7.1
 def option_seven_one():
     typing("You take a firm grip on one of the reeds...\n", 0.03)
     typing("You pull it back, run and jump!\n", 0.03)
@@ -178,12 +188,30 @@ def option_eight():
         typing("As you make a break for it the goblins start launching things at you!\n", 0.03)
         game_over("A large rock cracks you across the back of the head....\n")
 
+
 # OPTION 9
 def option_nine():
     if has_axe == True:
-        print("has axe")
+        two_choice_option("Do you want to jam your axe in the door? (yes/no): \n", "yes", "no", option_nine_one, option_nine_two)
     else:    
-        typing("no axe", 0.03)
+        option_nine_two()
+
+
+# OPTION 9.1 
+def option_nine_one():
+    typing("You jam your axe in the door locking it shut!\n", 0.03)
+    typing("What ever is behind the door hears you and start trying to break out!\n", 0.03)
+    typing("the door starts to crack open! YOU RUN!!!!\n\n", 0.03)
+    typing("ohhhh you run as fast as you can!\n", 0.03)
+    game_win("You run so fast you make it out of the cave without any harm!")
+
+# OPTION 9.2
+def option_nine_two():
+    typing("You quitely sneak past the door and start to tun again!\n\n", 0.03)
+    print("BANG!\n\n")
+    typing("The door swings open and tow goblins emerge!\n", 0.03)
+    typing("Faster than you can turn around and run, the goblins fire two arrows!\n", 0.03)
+    game_over("One arrow flies past your head and the other hits you in the back! You drop to the ground.\n")
 
 
 # OPTION 10
