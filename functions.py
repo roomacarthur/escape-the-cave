@@ -3,6 +3,8 @@ import sys
 import time
 
 
+# Code Credit - Help with the typing() function was found here:
+# https://stackoverflow.com/questions/4627033/printing-a-string-with-a-little-delay-between-the-chars
 def typing(text, speed):
     """
     This is a modified print function,
@@ -16,6 +18,7 @@ def typing(text, speed):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(speed)
+# End Code Credit
 
 
 def two_choice_option(prompt, opt1, opt2, path1, path2):
