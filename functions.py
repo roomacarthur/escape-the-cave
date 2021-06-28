@@ -31,45 +31,51 @@ def two_choice_option(prompt, opt1, opt2, path1, path2):
     # Consider if the try/except is even needed here
     # as the else statement works fine.
     while True:
-        try:
-            choice = input(prompt)
-            if choice == opt1:
-                path1()
-                break
-            elif choice == opt2:
-                path2()
-                break
-            else:
-                print(f"Please enter a valid option! ({opt1} or {opt2})\n")
-                continue
-        except ValueError:
-            print(f"ERROR: please enter a valid option! ({opt1} or {opt2})\n")
+        choice = input(prompt)
+        if choice == opt1:
+            path1()
+            break
+        elif choice == opt2:
+            path2()
+            break
+        else:
+            print()
+            print(f"Please enter a valid option! ({opt1} or {opt2})\n")
+            continue
 
 
 def four_choice_option(opt1, opt2, opt3, opt4):
     """
-    
+    Function to allow for a 4 point multiple choice option,
+    if input is valid, it will continue with story.
+    If the input is not an integer it will throw a ValueError
+    and prompt for input again. If input is an integers but is not
+    valid, it will ask for input again. 
     """
     while True:
-        choice = int(input("Quickly, which path do you take? (1/2/3/4): \n"))
+        choice = input("Quickly, which path do you take? (1/2/3/4): \n")
         try:
-            if choice == 1:
-                return opt1()
-            elif choice == 2:
-                return opt2()
-            elif choice == 3:
-                return opt3()
-            elif choice == 4:
-                return opt4()
+            input_int = int(choice)
+            if input_int == 1:
+                opt1()
+                break
+            elif input_int == 2:
+                opt2()
+                break
+            elif input_int == 3:
+                opt3()
+                break
+            elif input_int == 4:
+                opt4()
+                break
             else:
                 print("Please enter a correct option (1/2/3/4).")
                 continue
         except ValueError:
             print("You must enter a 'number', try again.")
-            continue
 
 # Game over function
-def game_over(msg):
+def game_over(msg, function):
     typing(msg, 0.04)
     print()
     typing("         GAME OVER         \n", 0.01)
@@ -90,10 +96,10 @@ def game_over(msg):
     typing("█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████\n", 0.01)
     typing("███████▄░░░░░░░░░░░▄███████\n", 0.01)
     typing("██████████▄▄▄▄▄▄▄██████████\n", 0.01)
-
+    play_again(function)
 
 # Game win function
-def game_win(msg):
+def game_win(msg, function):
     typing(msg, 0.04)
     print("\n\n")
     typing("#######################################\n", 0.01)
@@ -106,4 +112,12 @@ def game_win(msg):
     typing("#              By. Ruairidh MacArthur #\n", 0.01)
     typing("#######################################\n", 0.01)
     print()
-    print("To play again click the 'RUN ESCAPE THE CAVE' button at the top")
+    play_again(function)
+
+def play_again(option):
+    print("To play again click the 'RUN ESCAPE THE CAVE' button at the top\n")
+    choice  = input("Or simply type 'yes': ")
+    if choice == "yes":
+        option()
+    else:
+        print("Thanks for playing!")
