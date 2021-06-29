@@ -43,14 +43,10 @@ The application has no strict audience, it is aimed at anyone that want's to pla
 
 ### Other Technologies and Libraries 
 
-- [time](https://docs.python.org/3/library/time.html)
 - [GitHub](https://github.com/)
 - [Git](https://gitforwindows.org/)
 - [VS-Code](https://code.visualstudio.com/)
 - [Heroku](https://heroku.com)
-
-### Python Modules
-
 - [Time](https://docs.python.org/3/library/time.html)
     - To allow for timing between character output in the typing() function to achieve a typing style animation for the output.
 - [sys](https://docs.python.org/3/library/sys.html)
@@ -82,6 +78,8 @@ All manual testing results can be found below:
 
 1. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
     - The Template for the GUI for my python project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
+2. [Stack Overflow](https://stackoverflow.com/questions/4627033/printing-a-string-with-a-little-delay-between-the-chars)
+    - For assistance with the typing() function in functions.py
 
 ## Deployment
 
