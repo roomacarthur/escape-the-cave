@@ -5,7 +5,8 @@
 
 
 # imports:
-from functions import typing, two_choice_option, game_over, game_win, four_choice_option
+from functions import typing, two_choice_option
+from functions import game_over, game_win, four_choice_option
 
 
 def intro_msg():
@@ -58,7 +59,8 @@ def option_one():
     typing("You exit the room through the large wooden door...\n", 0.01)
     typing("You notice the cave goes in two different directions!\n", 0.01)
     # call two_choice function.
-    two_choice_option("Do you go left or right? (left/right): \n", \
+    two_choice_option(
+        "Do you go left or right? (left/right): \n",
         "left", "right", option_two, option_three)
 
 
@@ -94,9 +96,8 @@ def option_three():
     typing("The large cavern has 4 exits!\n", 0.01)
     typing("As you ponder on which of the 4 exits to take\n", 0.03)
     typing("you hear some commotion coming from back down the cave! \n", 0.01)
-    print(
-        f'"{P_NAME.upper()} IS MAKING A RUN FOR IT!\
-        GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
+    print(f'"{P_NAME.upper()} IS MAKING A RUN FOR IT!')
+    print('GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
     # Call four choice function.
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
@@ -154,7 +155,7 @@ def option_five():
     """
     OPTION 5 - Continues with story progression,
     prompts user for two choice function to progress
-    further. 
+    further.
     """
     typing("You picked the largest opening of the four!\n", 0.03)
     typing("You start sprinting as fast as you can,\n", 0.03)
@@ -261,78 +262,126 @@ def option_eight():
 
 def option_nine():
     """
-    OPTION 9 -
+    OPTION 9 - Progresses through the Story dependant on
+    weather has_axe is True or False
+    has_axe = True: Prompt two choice function and progress
+    has_axe = False: Prompt Game over.
     """
     if has_axe:
-        two_choice_option("Do you want to jam your axe in the door? (yes/no): \n", "yes", "no", option_nine_one, option_nine_two)
+        # Call two choice function.
+        two_choice_option(
+            "Do you want to jam your axe in the door? (yes/no): \n",
+            "yes", "no", option_nine_one, option_nine_two)
     else:
-        game_over("A goblin jumps out from a crack in the wall and slaps you silly!", start_game)
+        # Call game over function
+        game_over(
+            "A goblin jumps out from a crack in the wall and slaps you silly!",
+            start_game)
 
 
 def option_nine_one():
     """
-    OPTION 9.1 -
+    OPTION 9.1 - Story progression from Option 9
+    call game win function.
     """
     typing("You jam your axe in the door locking it shut!\n", 0.03)
-    typing("Whatever is behind the door hears you and start trying to break out!\n", 0.03)
+    typing(
+        "Whatever is behind the door hears and starts trying to break out!\n",
+        0.03)
     typing("the door starts to crack open! YOU RUN!!!!\n\n", 0.03)
     typing("Ohhhh you run as fast as you can!\n", 0.03)
-    game_win("You run so fast you make it out of the cave without any harm!\n", start_game)
+    # Call game win function.
+    game_win(
+        "You run so fast you make it out of the cave without any harm!\n",
+        start_game)
 
 
 def option_nine_two():
     """
-    OPTION 9.2 -
+    OPTION 9.2 - progression from Option 9
+    continue through story and call game over function.
     """
     typing("You quietly sneak past the door and start to tun again!\n\n", 0.03)
     print("BANG!\n\n")
     typing("The door swings open and two goblins emerge!\n", 0.03)
-    typing("Faster than you can turn around and run, the goblins fire two arrows!\n", 0.03)
-    game_over("One arrow flies past your head and the other hits you in the back! You drop to the ground.\n", start_game)
+    typing(
+        "Faster than you can turn and run, the goblins fire two arrows!\n",
+        0.03)
+    # Call game over function.
+    game_over(
+        "One flies past you & one hits you in the back! You drop dead.\n",
+        start_game)
 
 
 def option_ten():
     """
-    OPTION 10 -
+    OPTION 10 - Progress through story
+    call game over function.
     """
-    typing(F"You pull {AXE_NAME} from your belt and prepare to fight!\n\n", 0.03)
-    typing("The goblins advance really fast... You hold them off as much as you can!\n", 0.03)
-    game_over("You must have forgotten you were on your own, a goblin sneaks behind you and clubs you over the head!\n", start_game)
+    typing(
+        F"You pull {AXE_NAME} from your belt and prepare to fight!\n\n",
+        0.03)
+    typing(
+        "The goblins advance fast... You hold them off as much as you can!\n",
+        0.03)
+    # Call game over function.
+    game_over(
+        "As you fight a goblin sneaks up and clubs you over the skull!\n",
+        start_game)
 
 
 def option_eleven():
     """
-    OPTION 11 -
+    OPTION 11 - progress through story
+    call game win function.
     """
-    typing(f"The goblins start to advance quickly, you pull{AXE_NAME} from your belt!\n", 0.03)
-    typing(f"You launch {AXE_NAME} at the massive candle chandelier above the goblins!\n", 0.03)
-    typing(f"Luckily it hits the rope holding it up and the chandelier comes crashing down on top of them!\n", 0.03)
-    # Game Win message
-    game_win("This slows them down enough for you to make your great escape!\n", start_game)
+    typing(
+        f"The goblins start to advance, you pull{AXE_NAME} from your belt!\n",
+        0.03)
+    typing(
+        f"You launch {AXE_NAME} at the large candle chandelier above them!\n",
+        0.03)
+    typing("Luckily it hits the rope holding it up...\n\n", 0.03)
+    print("The chandelier comes crashing down on top of them!\n")
+    # Call game win function
+    game_win(
+        "This slows them down enough for you to make your great escape!\n",
+        start_game)
 
 
 def option_twelve():
     """
-    OPTION 12 -
+    OPTION 12 - progress through story
+    call game over function.
     """
     typing("You make your way down the path which leads to a door.\n", 0.03)
     typing("You slowly reach out and touch the door...\n\n", 0.03)
-    print("BANG!!!\n\n")
-    typing("You've triggered a mechanism, closing the door behind you!\n", 0.03)
-    # Game Over message
-    game_over("The door in front of you opens and you are greeted by a large goblin who clubs you over the head!\n", start_game)
+    print("BANG!!!\n")
+    typing(
+        "You've triggered a mechanism, closing the door behind you!\n\n",
+        0.03)
+    print("The large door in front of you slams open..\n")
+    # Call game over function
+    game_over(
+        "you are greeted by a large goblin who clubs you over the head!\n",
+        start_game)
 
 
 def option_thirteen():
     """
-    option 13 -
+    option 13 - progres through story,
+    call game over function.
     """
-    typing("You start to swim and the light starts to get brighter!\n", 0.03)
+    typing(
+        "You start to swim and the light starts to get brighter!\n",
+        0.03)
     typing("OMG! You can see the outside!\n", 0.03)
-    typing("Just as you make it past halfway a crocodile grabs your ankle from under the water and pulls you down!\n", 0.05)
-    print()
-    # Game Over message
-    game_over("You make a valiant effort to fight the crocodile off, unfortunately, you don't succeed\n", start_game)
-
+    typing("Just as you make it past halfway a crocodile grabs your\n", 0.03)
+    typing("ankle from under the water and pulls you down!\n\n", 0.03)
+    typing("You make a valiant effort to fight off the crocodile...\n", 0.03)
+    # Call game over function
+    game_over(
+        "Unfortunately, you don't succeed\n",
+        start_game)
 
 start_game()
