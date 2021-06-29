@@ -50,16 +50,19 @@ The application has no strict audience, it is aimed at anyone that want's to pla
 - [Time](https://docs.python.org/3/library/time.html)
     - To allow for timing between character output in the typing() function to achieve a typing style animation for the output.
 - [sys](https://docs.python.org/3/library/sys.html)
-    - sys standard output is used to allow for the typing() function to output to the terminal. This prevents it being printed out 1 character per line as it would with the print() function.
+    - sys standard output is used to allow for the typing() function to output to the terminal. This prevents it from being printed out 1 character per line as it would with the print() function.
 
 ## Bugs & Fixes
 
 1. The typing animation function works flawlessly in the terminal but when pushing to Heroku and running it through the terminal template provided the animation isn't showing. 
-    - Currently no fix found.
+    - Currently, no fix found.
     
 2. FIXED: When passing the code through the [pep8 validator](https://pep8online.com) there was a lot of errors for line length.
     - I have shortened the story outputs and moved the functions onto new lines.
     ![Pep8 line error](assets/images/pep8-line-error.png)
+
+3. FIXED: Option_four() progresses even if no input for axe name.
+    - Implemented a while loop if the user doesn't supply any input, will prompt the user that they need to provide a name and ask for the input again.
 
 ## Testing
 
@@ -72,7 +75,7 @@ All manual testing results can be found below:
 
 1. Fun and enjoyable, reminded me a lot of the earlier games and activities I could play when I first got a PC.
 
-2. I really enjoyed the fact I could play the game completely through my keyboard! The fact I could name the axe was pretty cool.
+2. I enjoyed the fact I could play the game completely through my keyboard! The fact I could name the axe was pretty cool.
 
 ## Credits
 
@@ -132,7 +135,7 @@ If you wish to experiment with the code freely, you can achieve this by forking 
     
     > $ cd "directory-name"
 3. Navigate to the repository on GitHub [HERE](github.com/roomacarthur/escape-the-cave)
-4. On the upper right hand side of the content, click on the button "Code"
+4. On the upper right-hand side of the content, click on the button "Code"
 5. A dropdown box should appear, copy the SHH key.
 6. Open up your GitBash terminal from before. 
 7. Clone the repository with the following command.
@@ -142,4 +145,5 @@ If you wish to experiment with the code freely, you can achieve this by forking 
 The code will now be cloned into a local directory for you to access. You can now access the code in your IDE by entering the following code into your terminal:
     
     > $ code .
+
 
