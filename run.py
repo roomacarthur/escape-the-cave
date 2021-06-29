@@ -104,8 +104,8 @@ def option_three():
 
 def option_three_return():
     """
-    This allows for the user to return back to the option 3 stage
-    and get the same options but different text content.
+    This allows for the user to return to the option 3 stage
+    and get the same options but different textual content.
     """
     print("You end up back in the mahoosive cavern.\n")
     # Call four choice function
@@ -121,8 +121,17 @@ def option_four():
     global has_axe
     has_axe = True
     typing("You pick the Axe up, you should give it a name...\n", 0.02)
-    global AXE_NAME
-    AXE_NAME = input("What do you want to call it?: \n")
+
+    while True:
+        # set AXE_NAME to a global variable.
+        global AXE_NAME
+        AXE_NAME = input("What do you want to call it?: \n")
+
+        if AXE_NAME == "":
+            print("You really need to give that shiny metal a name...\n")
+            continue
+        else:
+            break
     typing(f"You slide {AXE_NAME} into your belt.\n\n", 0.03)
     typing("As you move deeper, you start to hear some talking.\n", 0.03)
     typing("You come across a door and notice that\n", 0.03)
@@ -136,8 +145,8 @@ def option_four():
 def option_four_one():
     """
     Option 4.1 function - If the user has not picked up the axe.
-    same story line as option 4 but removes axe story.
-    prompt for two choice option to continue.
+    The same storyline as option 4 but removes axe story.
+    prompt for a two-choice option to continue.
     """
     global has_axe
     has_axe = False
@@ -154,7 +163,7 @@ def option_four_one():
 def option_five():
     """
     OPTION 5 - Continues with story progression,
-    prompts user for two choice function to progress
+    prompts the user for two-choice function to progress
     further.
     """
     typing("You picked the largest opening of the four!\n", 0.03)
@@ -171,8 +180,8 @@ def option_five():
 
 def option_six():
     """
-    Option 6 - End point of story,
-    game_win and prompts user if they would like to play again.
+    Option 6 - Endpoint of story,
+    game_win and prompts users if they would like to play again.
     """
     typing(
         "Oft, you picked the smallest for the four options.\n",
@@ -218,7 +227,7 @@ def option_seven_one():
     progress through the story and then call
     the game win function.
     game_win takes the message to show and then calls
-    the start_game() function to re run the game.
+    the start_game() function to re-run the game.
     """
     typing("You take a firm grip on one of the reeds...\n", 0.03)
     typing("You pull it back, run and jump!\n", 0.03)
@@ -232,7 +241,7 @@ def option_seven_one():
 def option_eight():
     """
     OPTION 8 - Progresses through the story but takes
-    different paths depending on weather has_axe is
+    different paths depending on whether has_axe is
     True or False.
     if True: prompt two choice function and continue
     if False: Prompt game over.
@@ -315,7 +324,7 @@ def option_nine_two():
 
 def option_ten():
     """
-    OPTION 10 - Progress through story
+    OPTION 10 - Progress through the story
     call game over function.
     """
     typing(
@@ -332,7 +341,7 @@ def option_ten():
 
 def option_eleven():
     """
-    OPTION 11 - progress through story
+    OPTION 11 - progress through the story
     call game win function.
     """
     typing(
@@ -351,7 +360,7 @@ def option_eleven():
 
 def option_twelve():
     """
-    OPTION 12 - progress through story
+    OPTION 12 - progress through the story
     call game over function.
     """
     typing("You make your way down the path which leads to a door.\n", 0.03)
@@ -369,7 +378,7 @@ def option_twelve():
 
 def option_thirteen():
     """
-    option 13 - progres through story,
+    option 13 - progress through the story,
     call game over function.
     """
     typing(
