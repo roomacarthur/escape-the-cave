@@ -70,11 +70,16 @@ def option_two():
     it and the variable for the axes name has been altered to a
     global variable so it can be called in later functions.
     """
-    typing("As you head left the cave gets tighter, so you slowly navigate the slippy rocks cautiously...\n\n", 0.03)
-    print("WOOOAAAHHH!!! You trip and hit the ground with an almighty bang!\n")
-    typing("You feel around as you try to get back up and realise that you tripped over an axe!\n\n", 0.03)
+    typing("As you head left the cave gets tighter\n", 0.03)
+    typing("you slowly navigate the slippy rocks cautiously...\n\n", 0.03)
+    print("WOOOAAAHHH!!!")
+    typing("You trip and hit the ground with an almighty bang!\n", 0.03)
+    typing("You feel around as you try to get back up and you\n", 0.03)
+    typing("realise that you tripped over an axe!\n\n", 0.03)
     # call two_choice function
-    two_choice_option("Do you keep the axe? (yes/no): \n", "yes", "no", option_four, option_four_one)
+    two_choice_option(
+        "Do you keep the axe? (yes/no): \n", "yes", "no",
+        option_four, option_four_one)
 
 
 def option_three():
@@ -84,19 +89,25 @@ def option_three():
     and will loop if the value given for 'choice' is not an integer
     """
     typing("You turn right and run as fast as you can!\n\n", 0.01)
-    print("SCREEEEEEEEEECHH!!!!\n\n")
-    typing("WOAHH! You find yourself in a massive cavern full of bats!!\n", 0.01)
+    print("SCREEEEEEEEEECHH!!!!\n")
+    typing("You find yourself in a massive cavern full of bats!!\n", 0.01)
     typing("The large cavern has 4 exits!\n", 0.01)
-    typing("As you ponder on which of the 4 exits to take you hear some commotion coming from back down the cave! \n", 0.01)
-    print(f'"{P_NAME.upper()} IS MAKING A RUN FOR IT! GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
+    typing("As you ponder on which of the 4 exits to take\n", 0.03)
+    typing("you hear some commotion coming from back down the cave! \n", 0.01)
+    print(
+        f'"{P_NAME.upper()} IS MAKING A RUN FOR IT!\
+        GRAB YOUR WEAPONS AND LETS CATCH THEM!!"\n')
+    # Call four choice function.
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 
 def option_three_return():
     """
-    This allows for the user to return back and get the same options but different text content.
+    This allows for the user to return back to the option 3 stage
+    and get the same options but different text content.
     """
     print("You end up back in the mahoosive cavern.\n")
+    # Call four choice function
     four_choice_option(option_five, option_six, option_seven, option_twelve)
 
 
@@ -111,33 +122,50 @@ def option_four():
     typing("You pick the Axe up, you should give it a name...\n", 0.02)
     global AXE_NAME
     AXE_NAME = input("What do you want to call it?: \n")
-    typing(f"You slide {AXE_NAME} into your belt and continue moving down the cave.\n\n", 0.03)
-    typing("As you move deeper into the cave you start to hear some talking coming from somewhere\n", 0.03)
-    typing("You come across a door and notice that the chatter is coming from behind it!\n", 0.03)
-    two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
+    typing(f"You slide {AXE_NAME} into your belt.\n\n", 0.03)
+    typing("As you move deeper, you start to hear some talking.\n", 0.03)
+    typing("You come across a door and notice that\n", 0.03)
+    typing("the chatter is coming from behind it!\n", 0.03)
+    # Call two choice function.
+    two_choice_option(
+        "Do you have a look behind the door? (yes/no):\n",
+        "yes", "no", option_eight, option_nine)
 
 
 def option_four_one():
     """
     Option 4.1 function - If the user has not picked up the axe.
+    same story line as option 4 but removes axe story.
+    prompt for two choice option to continue.
     """
     global has_axe
     has_axe = False
-    typing("You leave the axe on the floor and move deeper into the cave system!\n", 0.03)
-    typing("You can hear some chatter coming from further down the cave\n", 0.03)
-    typing("You come across a door and notice that the chatter is coming from behind it!\n", 0.03)
-    two_choice_option("Do you have a look behind the door? (yes/no):\n", "yes", "no", option_eight, option_nine)
+    typing("You leave the axe on the floor and continue onwards\n", 0.03)
+    typing("As you move deeper, you start to hear some talking.\n", 0.03)
+    typing("You come across a door and notice that\n", 0.03)
+    typing("the chatter is coming from behind it!\n", 0.03)
+    # Call two choice function.
+    two_choice_option(
+        "Do you have a look behind the door? (yes/no):\n",
+        "yes", "no", option_eight, option_nine)
 
 
 def option_five():
     """
-    OPTION 5 -
+    OPTION 5 - Continues with story progression,
+    prompts user for two choice function to progress
+    further. 
     """
     typing("You picked the largest opening of the four!\n", 0.03)
-    typing("You start sprinting as fast as you can, knowing that the goblins aren't far behind!\n", 0.03)
+    typing("You start sprinting as fast as you can,\n", 0.03)
+    typing("knowing that the goblins aren't far behind!\n", 0.03)
     typing("All of a sudden you are ankle-deep in the water!\n", 0.03)
-    typing("As the water starts to get deeper but you notice a faint light at the far end of the cavern!\n", 0.03)
-    two_choice_option("Do you swim or turn around and run? (swim/run): \n", "swim", "run", option_thirteen, option_three_return)
+    typing("As the water starts to get deeper you start to notice\n", 0.03)
+    typing("a faint light at the far end of the cavern!\n", 0.03)
+    # Call two choice function.
+    two_choice_option(
+        "Do you swim or turn around and run? (swim/run): \n",
+        "swim", "run", option_thirteen, option_three_return)
 
 
 def option_six():
@@ -145,13 +173,21 @@ def option_six():
     Option 6 - End point of story,
     game_win and prompts user if they would like to play again.
     """
-    typing("Oft, you picked the smallest for the four options.\n", 0.03)
-    typing("It's so small, you struggle to fit through the gap!\n", 0.03)
-    typing("You somehow manage to squeeze yourself through the gap.\n", 0.03)
-    typing("You find yourself in a new cavern filled with slimy reeds that hang from the ceiling.\n", 0.03)
-    typing("As you slowly navigate your way through the maze of reeds, there is a loud rumble!\n\n", 0.03)
-    print("The floor crumbels and gives way!\n\n")
-    typing("AAAGGGGHHHHHHHHH!!!!!!\n", 0.03)
+    typing(
+        "Oft, you picked the smallest for the four options.\n",
+        0.03)
+    typing(
+        "It's so small, you struggle to fit through the gap!\n",
+        0.03)
+    typing(
+        "You somehow manage to squeeze yourself through.\n",
+        0.03)
+    typing("You find yourself in a new cavern filled with\n", 0.03)
+    typing("slimy reeds that hang from the ceiling.\n", 0.03)
+    typing("As you navigate your way through the maze of reeds\n\n", 0.03)
+    typing("There is a loud rumble!\n\n", 0.03)
+    print("The floor crumbels and gives way!\n")
+    typing("AAAGGGGHHHHHHHHH!!!!!!\n\n", 0.03)
     typing("You splash into some water and as you surface\n", 0.03)
     game_win("You realise you have escaped!\n", start_game)
 
@@ -268,4 +304,4 @@ def option_thirteen():
     game_over("You make a valiant effort to fight the crocodile off, unfortunately, you don't succeed\n", start_game)
 
 
-start_game()
+# start_game()
