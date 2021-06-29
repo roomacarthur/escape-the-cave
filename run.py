@@ -345,7 +345,7 @@ def option_eleven():
     call game win function.
     """
     typing(
-        f"The goblins start to advance, you pull{AXE_NAME} from your belt!\n",
+        f"The goblins start to advance, you pull {AXE_NAME} from your belt!\n",
         0.03)
     typing(
         f"You launch {AXE_NAME} at the large candle chandelier above them!\n",
