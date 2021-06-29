@@ -50,6 +50,8 @@ A text-based, turn-based game that the user will operate in the command line. Th
 
 1. The typing animation function works flawlessly in the terminal but when pushing to Heroku and running it through the terminal template provided the animation isn't showing. 
     - 
+2. FIXED - When passing the code through the [pep8 validator](https://pep8online.com) there was a lot of errors for line length.
+    - I have shortened the story outputs and moved the functions onto new lines.
 
 ## Testing
 
