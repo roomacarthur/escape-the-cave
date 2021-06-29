@@ -11,8 +11,9 @@
 1. [Intro](#intro)
 2. [Technologies](#technologies)
 3. [Bugs & Fixes](#bugs--fixes)
-4. [Credits](#credits)
-5. [Deployment](#deployment)
+4. [Testing](#testing) 
+5. [Credits](#credits)
+6. [Deployment](#deployment)
 
 
 
