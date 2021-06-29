@@ -44,12 +44,14 @@ A text-based, turn-based game that the user will operate in the command line. Th
 ### Python Modules
 
 - [Time](https://docs.python.org/3/library/time.html)
+    - To allow for timing between character output in the typing() function to achieve a typing style animation for the output.
 - [sys](https://docs.python.org/3/library/sys.html)
+    - sys standard output is used to allow for the typing() function to output to the terminal. This prevents it being printed out 1 character per line as it would with the print() function.
 
 ## Bugs & Fixes
 
 1. The typing animation function works flawlessly in the terminal but when pushing to Heroku and running it through the terminal template provided the animation isn't showing. 
-    - Working on fix.
+    - Currently no fix found.
     
 2. FIXED: When passing the code through the [pep8 validator](https://pep8online.com) there was a lot of errors for line length.
     - I have shortened the story outputs and moved the functions onto new lines.
