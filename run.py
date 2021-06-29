@@ -304,4 +304,4 @@ def option_thirteen():
     game_over("You make a valiant effort to fight the crocodile off, unfortunately, you don't succeed\n", start_game)
 
 
-# start_game()
+start_game()
