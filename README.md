@@ -22,9 +22,9 @@ A text-based, turn-based game that the user will operate in the command line. Th
 
 ## Design
 
-[Code Logic Flow Chart](https://lucid.app/lucidchart/invitations/accept/inv_45e4f3f7-722a-4413-a2d3-3a04dfd3cb2b)
+[Code Logic Flow Chart](assets/flowchart.pdf)
 
-[Game Story/Content](assets/flowchart.pdf)
+[Game Story/Content](https://docs.google.com/document/d/1gkMlBvm8pnAvG1E_excuL2s7OM48bxCQQx1XOgrXz50/edit?usp=sharing)
 
 
 ## Technologies
