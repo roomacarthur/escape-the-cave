@@ -189,43 +189,74 @@ def option_six():
     print("The floor crumbels and gives way!\n")
     typing("AAAGGGGHHHHHHHHH!!!!!!\n\n", 0.03)
     typing("You splash into some water and as you surface\n", 0.03)
+    # Call game win function.
     game_win("You realise you have escaped!\n", start_game)
 
 
 def option_seven():
     """
-    OPTION 7 -
+    OPTION 7 - Progresses through the story and prompt for
+    two choice user input to progress further.
     """
-    typing("You run straight ahead having to stop suddenly for a massive pit!\n", 0.03)
-    typing("You notice some reeds hanging down from above the pit!\n", 0.03)
-    typing("You can see some light coming from down the cave on the other side of the pit!\n", 0.03)
-    two_choice_option("Do you risk swinging across? (swing/run): \n", "swing", "run", option_seven_one, option_three_return)
+    typing(
+        "You run straight ahead having to stop suddenly for a massive pit!\n",
+        0.03)
+    typing(
+        "You notice some reeds hanging down from above the pit!\n",
+        0.03)
+    typing("You can see some light far in the distance over the pit\n", 0.03)
+    # Call two choice function
+    two_choice_option(
+        "Do you risk swinging across? (swing/run): \n", "swing", "run",
+        option_seven_one, option_three_return)
 
 
 def option_seven_one():
     """
-    OPTION 7.1 -
+    OPTION 7.1 - this is a winning path,
+    progress through the story and then call
+    the game win function.
+    game_win takes the message to show and then calls
+    the start_game() function to re run the game.
     """
     typing("You take a firm grip on one of the reeds...\n", 0.03)
     typing("You pull it back, run and jump!\n", 0.03)
     typing("You successfully land on the other side... somehow...\n\n", 0.03)
-    game_win("You continue down the cave and make it outside!\n", start_game)
+    # Call game win function.
+    game_win(
+        "You continue down the cave and make it outside!\n",
+        start_game)
 
 
 def option_eight():
     """
-    OPTION 8 -
+    OPTION 8 - Progresses through the story but takes
+    different paths depending on weather has_axe is
+    True or False.
+    if True: prompt two choice function and continue
+    if False: Prompt game over.
     """
     typing("you slowly ease the door open.\n", 0.03)
-    typing("All of a sudden a gust of wind grabs the door and slams it open!\n\n", 0.03)
+    typing(
+        "All of a sudden the wind grabs the door and slams it open!\n\n",
+        0.03)
     print("BANG!!\n")
-    typing("The goblins in the room see you and advance with their weapons drawn!\n", 0.03)
+    typing("The goblins in the room see you\n", 0.03)
+    typing("they advance with their weapons drawn!\n", 0.03)
     if has_axe:
-        two_choice_option("Do you fight or run? (fight/run): \n", "fight", "run", option_ten, option_eleven)
+        # Call two choice function.
+        two_choice_option(
+            "Do you fight or run? (fight/run): \n", "fight", "run",
+            option_ten, option_eleven)
     else:
         typing("You turn around and run as fast as you can!\n", 0.03)
-        typing("As you make a break for it the goblins start launching things at you!\n", 0.03)
-        game_over("A large rock cracks you across the back of the head...\n", start_game)
+        typing(
+            "As you sprint the goblins start launching things at you!\n",
+            0.03)
+        # Call game over function.
+        game_over(
+            "A large rock cracks you across the back of the head...\n",
+            start_game)
 
 
 def option_nine():
