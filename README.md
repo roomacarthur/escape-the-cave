@@ -1,7 +1,7 @@
 # Escape The Cave
 ## by. Ruairidh MacArthur
 
-![Escape the Cave live example](assets/images/example.gif)
+![Escape the Cave live example](assets/images/example1.gif)
 
 - [Live Site](https://escape-the-cave.herokuapp.com/)
 
