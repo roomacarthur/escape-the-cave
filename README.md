@@ -26,6 +26,13 @@ A text-based, turn-based game that the user will operate in the command line. Th
 
 [Game Story/Content](https://docs.google.com/document/d/1gkMlBvm8pnAvG1E_excuL2s7OM48bxCQQx1XOgrXz50/edit?usp=sharing)
 
+### Goals
+
+The main goal of this application to provide a fun text-based, turn-based game that runs in the command line. I hope to achieve a good level of nostalgia for the older generations. 
+
+### Audience
+
+The application has no strict audience, it is aimed at anyone that want's to play, I believe the older generations will find it more interesting as there are no fancy graphics.
 
 ## Technologies
 
@@ -61,7 +68,14 @@ A text-based, turn-based game that the user will operate in the command line. Th
 
 For testing, print statements were used heavily during the coding of the application. 
 Once finished I manually tested the application, navigating all paths to see if they gave the expected result.
-All manual testing results can be found [HERE](https://docs.google.com/spreadsheets/d/1a76gGDzSrekAAO0boTX2rMBjeMiLd7eRQbkZOI7SfSQ/edit?usp=sharing)
+All manual testing results can be found below:
+### [TESTING SHEET](https://docs.google.com/spreadsheets/d/1a76gGDzSrekAAO0boTX2rMBjeMiLd7eRQbkZOI7SfSQ/edit?usp=sharing)
+
+### User testing feedback.
+
+1. Fun and enjoyable, reminded me a lot of the earlier games and activities I could play when I first got a PC.
+
+2. I really enjoyed the fact I could play the game completely through my keyboard! The fact I could name the axe was pretty cool.
 
 ## Credits
 
