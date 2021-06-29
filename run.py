@@ -31,7 +31,7 @@ def start_game():
     Starts the game, retrieves username from player and
     welcomes them to the game.
     """
-    # ---WELCOME MESSAGE
+    # print welcome message
     intro_msg()
 
     # Loop to ensure the user inputs a name.
@@ -118,7 +118,9 @@ def option_four():
     progresses through the story and prompts the user to name their axe.
     prompt the user to input an option to progress further.
     """
+    # set has_axe to global variable
     global has_axe
+    # set has_axe to True
     has_axe = True
     typing("You pick the Axe up, you should give it a name...\n", 0.02)
 
@@ -126,7 +128,7 @@ def option_four():
         # set AXE_NAME to a global variable.
         global AXE_NAME
         AXE_NAME = input("What do you want to call it?: \n")
-
+        # Check if axe name has input, if not re prompt for input
         if AXE_NAME == "":
             print("You really need to give that shiny metal a name...\n")
             continue
@@ -148,7 +150,9 @@ def option_four_one():
     The same storyline as option 4 but removes axe story.
     prompt for a two-choice option to continue.
     """
+    # set has_axe to global variable
     global has_axe
+    # set has_axe to false
     has_axe = False
     typing("You leave the axe on the floor and continue onwards\n", 0.03)
     typing("As you move deeper, you start to hear some talking.\n", 0.03)
@@ -253,6 +257,7 @@ def option_eight():
     print("BANG!!\n")
     typing("The goblins in the room see you\n", 0.03)
     typing("they advance with their weapons drawn!\n", 0.03)
+    # check if has_axe is true or not.
     if has_axe:
         # Call two choice function.
         two_choice_option(
@@ -276,6 +281,7 @@ def option_nine():
     has_axe = True: Prompt two choice function and progress
     has_axe = False: Prompt Game over.
     """
+    # check if has_axe is true or not.
     if has_axe:
         # Call two choice function.
         two_choice_option(
