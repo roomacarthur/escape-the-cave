@@ -77,7 +77,7 @@ def option_two():
     print("WOOOAAAHHH!!!")
     typing("You trip and hit the ground with an almighty bang!\n", 0.03)
     typing("You feel around as you try to get back up and you\n", 0.03)
-    typing("realise that you tripped over an axe!\n\n", 0.03)
+    typing("Realise that you tripped over an axe!\n\n", 0.03)
     # call two_choice function
     two_choice_option(
         "Do you keep the axe? (yes/no): \n", "yes", "no",
@@ -137,7 +137,7 @@ def option_four():
     typing(f"You slide {AXE_NAME} into your belt.\n\n", 0.03)
     typing("As you move deeper, you start to hear some talking.\n", 0.03)
     typing("You come across a door and notice that\n", 0.03)
-    typing("the chatter is coming from behind it!\n", 0.03)
+    typing("The chatter is coming from behind it!\n", 0.03)
     # Call two choice function.
     two_choice_option(
         "Do you have a look behind the door? (yes/no):\n",
@@ -157,7 +157,7 @@ def option_four_one():
     typing("You leave the axe on the floor and continue onwards\n", 0.03)
     typing("As you move deeper, you start to hear some talking.\n", 0.03)
     typing("You come across a door and notice that\n", 0.03)
-    typing("the chatter is coming from behind it!\n", 0.03)
+    typing("The chatter is coming from behind it!\n", 0.03)
     # Call two choice function.
     two_choice_option(
         "Do you have a look behind the door? (yes/no):\n",
@@ -172,10 +172,10 @@ def option_five():
     """
     typing("You picked the largest opening of the four!\n", 0.03)
     typing("You start sprinting as fast as you can,\n", 0.03)
-    typing("knowing that the goblins aren't far behind!\n", 0.03)
+    typing("Knowing that the goblins aren't far behind!\n", 0.03)
     typing("All of a sudden you are ankle-deep in the water!\n", 0.03)
     typing("As the water starts to get deeper you start to notice\n", 0.03)
-    typing("a faint light at the far end of the cavern!\n", 0.03)
+    typing("A faint light at the far end of the cavern!\n", 0.03)
     # Call two choice function.
     two_choice_option(
         "Do you swim or turn around and run? (swim/run): \n",
@@ -197,7 +197,7 @@ def option_six():
         "You somehow manage to squeeze yourself through.\n",
         0.03)
     typing("You find yourself in a new cavern filled with\n", 0.03)
-    typing("slimy reeds that hang from the ceiling.\n", 0.03)
+    typing("Slimy reeds that hang from the ceiling.\n", 0.03)
     typing("As you navigate your way through the maze of reeds\n\n", 0.03)
     typing("There is a loud rumble!\n\n", 0.03)
     print("The floor crumbels and gives way!\n")
@@ -250,13 +250,13 @@ def option_eight():
     if True: prompt two choice function and continue
     if False: Prompt game over.
     """
-    typing("you slowly ease the door open.\n", 0.03)
+    typing("You slowly ease the door open.\n", 0.03)
     typing(
         "All of a sudden the wind grabs the door and slams it open!\n\n",
         0.03)
     print("BANG!!\n")
     typing("The goblins in the room see you\n", 0.03)
-    typing("they advance with their weapons drawn!\n", 0.03)
+    typing("They advance with their weapons drawn!\n", 0.03)
     # check if has_axe is true or not.
     if has_axe:
         # Call two choice function.
@@ -303,7 +303,7 @@ def option_nine_one():
     typing(
         "Whatever is behind the door hears and starts trying to break out!\n",
         0.03)
-    typing("the door starts to crack open! YOU RUN!!!!\n\n", 0.03)
+    typing("The door starts to crack open! YOU RUN!!!!\n\n", 0.03)
     typing("Ohhhh you run as fast as you can!\n", 0.03)
     # Call game win function.
     game_win(
